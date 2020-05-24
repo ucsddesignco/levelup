@@ -1,0 +1,16 @@
+@mixin transform($property) {
+  /* Safari */
+  -webkit-transform: $property;
+
+  /* Firefox */
+  -moz-transform: $property;
+
+  /* IE */
+  -ms-transform: $property;
+
+  /* Opera */
+  -o-transform: $property;
+
+  /* Internet Explorer */
+  // filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}

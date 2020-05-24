@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Neue Plak Extended";
+  src: url("../fonts/NeuePlak-ExtendedBold.woff2") format("woff2"),
+    url("../fonts/NeuePlak-ExtendedBold.woff") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NB International Pro";
+  src: url("../fonts/NB-International-Pro-Regular.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "NB International Pro";
+  src: url("../fonts/NBInternationalPro-Lig.woff2") format("woff2"),
+    url("../fonts/NBInternationalPro-Lig.woff") format("woff");
+  font-weight: 300;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 7px;
+  font-weight: 300;
+  @media screen and (min-width: $sm) {
+    font-size: 8px;
+  }
+  @media screen and (min-width: $md) {
+    font-size: 9px;
+  }
+}
+
+body {
+  font-family: "NB International Pro", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: 0.02rem;
+}
+
+h1, .sideBar p {
+  font-family: "Neue Plak Extended";
+}
+
+.sideBar p {
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-size: 9rem;
+}
+
+span {
+  font-size: 1.6vw;
+  padding: 0 2rem;
+}
+
+.navHeader h3 {
+  text-transform: uppercase;
+}
