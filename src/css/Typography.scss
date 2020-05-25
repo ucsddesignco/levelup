@@ -36,29 +36,59 @@ html {
 
 body {
   font-family: "NB International Pro", Arial, sans-serif;
-  font-weight: 300;
-  font-size: 1.8rem;
+  font-weight: 500;
+  font-size: 3rem;
   line-height: 1.5;
   letter-spacing: 0.02rem;
+}
+
+h1 {
+  font-size: 5vw;
 }
 
 h1, .sideBar p {
   font-family: "Neue Plak Extended";
 }
 
+h2 {
+  font-family: "Neue Plak Extended";
+  font-size: 3vw;
+  line-height: 3vw;
+}
+
 .sideBar p {
   font-size: 1.3rem;
 }
 
-h1 {
-  font-size: 9rem;
-}
-
 span {
+  font-family: "NB International Pro", Arial, sans-serif;
   font-size: 1.6vw;
   padding: 0 2rem;
+  font-weight: 500;
 }
 
 .navHeader h3 {
+  font-family: "NB International Pro", Arial, sans-serif;
   text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.nav a {
+  font-size: 1.8rem;
+}
+
+.overviewDetails li p {
+  font-family: "NB International Pro", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 3vw;
+}
+
+.counter::before {
+  font-family: "Neue Plak Extended";
+}
+
+.q {
+  font-family: "Neue Plak Extended";
+  font-size: 1.5vw;
 }

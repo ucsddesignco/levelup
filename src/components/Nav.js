@@ -4,13 +4,15 @@ class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      minimized: true,
       navPosition: "translateY(80%)"
     }
   }
 
   handleNav = () => {
     this.setState(state => ({
-      navPosition: state.navPosition == "translateY(80%)" ? "translateY(-10%)" : "translateY(80%)"
+      navPosition: state.navPosition == "translateY(80%)" ? "translateY(-10%)" : "translateY(80%)",
+      minimized: !state.minimized
     }));
   }
 
@@ -22,15 +24,16 @@ class Nav extends React.Component {
           <img 
             id="minimizeBtn"
             onClick={this.handleNav} 
-            src={require("./images/maximize.png")} alt="maximize" 
+            src={require(this.state.minimized ? "../images/maximize.png" : "../images/minimize.png")} 
+            alt="maximize" 
           />
         </div>
         
-        <div id="x"><a href="">About</a></div>
-        <div><a href="">Who is it for?</a></div>
-        <div><a href="">You will be...</a></div>
+        <div className="gradient"><a href="#about">About</a></div>
+        <div><a href="#who">Who is it for?</a></div>
+        <div><a href="#responsibility">You will be...</a></div>
         <div><a href="">What you can bring to the table...</a></div>
-        <div><a href="">Industry People</a></div>
+        <div><a href="#thankYou">Industry People</a></div>
       </div>
     )
   }
