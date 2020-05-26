@@ -8,12 +8,72 @@ class Main extends React.Component {
     super(props);
     this.state = {
       x: 0,
-      y: 0
+      y: 0,
+      activeIndex: null
     };
+
+    this.vh = 0.01 * window.innerHeight;
+    this.vw = 0.01 * window.innerWidth;
+    
+    this.landing = 100 * this.vh;
+    this.overview = 40 * this.vw;
+    this.about = 45 * this.vw;
+    this.apply = 150;
+    this.who = 23 * this.vw;
+    this.responsibility = 40 * this.vw;
+    this.outcome = 60 * this.vw;
+    this.faq = 40 * this.vw;
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     document.addEventListener("mousemove", this.handleGradient);
+    window.addEventListener('scroll', this.handleScroll, true);
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll, true);
+  }
+
+  handleScroll = () => {
+    if (window.scrollY >= this.landing + this.overview) {
+      this.setState({
+        activeIndex: 0
+      })
+    } else {
+      this.setState({
+        activeIndex: null
+      })
+    }
+    
+    if (window.scrollY >= this.landing + this.overview + this.about + this.apply) {
+      this.setState({
+        activeIndex: 1
+      })
+    }
+
+    if (window.scrollY >= this.landing + this.overview + this.about + this.apply + this.who + this.apply) {
+      this.setState({
+        activeIndex: 2
+      })
+    }
+
+    if (window.scrollY >= this.landing + this.overview + this.about + this.apply + this.who + this.apply + this.responsibility + this.apply) {
+      this.setState({
+        activeIndex: 3
+      })
+    }
+
+    if (window.scrollY >= this.landing + this.overview + this.about + this.apply + this.who + this.apply + this.responsibility + this.apply + this.outcome + this.apply) {
+      this.setState({
+        activeIndex: 4
+      })
+    }
+
+    if (window.scrollY >= this.landing + this.overview + this.about + this.apply + this.who + this.apply + this.responsibility + this.apply + this.outcome + this.apply + this.faq) {
+      this.setState({
+        activeIndex: 5
+      })
+    }
   }
 
   handleGradient = e => {
@@ -40,7 +100,7 @@ class Main extends React.Component {
 
         <div id="gradientCircle"></div>
 
-        <Nav />
+        <Nav activeIndex={this.state.activeIndex} />
 
         <div className="container">
           <div id="landing" className="landing">
@@ -279,6 +339,8 @@ class Main extends React.Component {
                   answer="Yes! At the end of the program, participants will have a high-quality case study that they can add to their resume and portfolios. "
                 />
               </div>
+
+              <div></div>
 
               <div>
                 <QA

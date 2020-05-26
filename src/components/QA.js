@@ -34,7 +34,6 @@ class QA extends React.Component {
           className={ this.state.isToggleOn ? "a-show" : "a-hidden" }
         >
           <p 
-            style={{ marginLeft: "4rem" }} 
             dangerouslySetInnerHTML={{ __html: this.htmlDecode(this.props.answer) }}
           />
         </div>

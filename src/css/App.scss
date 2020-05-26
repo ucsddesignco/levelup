@@ -13,7 +13,6 @@ body, html {
   height: 100%;
   scroll-behavior: smooth;
   counter-reset: responsibility;
-  overflow-x: hidden;
 }
 
 .sideBar {
@@ -317,7 +316,10 @@ h2 {
 .outcome {
   border: solid;
   border-width: 0 1px 1px 0;
-  // display: table;
+
+  h2 {
+    width: 75%;
+  }
 
   div {
     width: 50%;
@@ -334,6 +336,7 @@ h2 {
     color: #fff;
     padding: 5vw 8vw;
     position: relative;
+    overflow-x: hidden;
 
     p {
       position: absolute;
@@ -365,7 +368,7 @@ h2 {
 
     &::before {
       content: "*";
-      margin: -7px 3rem 0 calc(-34px - 3rem);
+      margin: -7px 3rem 0 calc(-2.5vw - 3rem);
       height: 3vw;
     }
   }
@@ -380,12 +383,15 @@ h2 {
 
 .faqDetails {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: calc(40% + 3vw) 10% calc(40% + 3vw);
 }
 
 .faq-item {
   position: relative;
-  margin-bottom: $spacer2;
+
+  &:not(:last-child) {
+    margin-bottom: $spacer2;
+  }
 
   p {
     margin: 0; // Prevent jump on drawer open
@@ -396,7 +402,6 @@ h2 {
 .q {
   cursor: pointer;
   margin-bottom: $spacer1;
-  margin-left: 4rem;
   transition: all 0.3s ease;
 
   &:before {
@@ -404,8 +409,8 @@ h2 {
     width: 1vw;
     height: 1vw;
     position: absolute;
-    top: calc(1.5vw/2);
-    left: 0;
+    top: calc(1.5vw / 2);
+    left: calc(-2vw - 1vw);
     background-image: url("../images/qa.svg");
     background-repeat: no-repeat;
     background-size: contain;

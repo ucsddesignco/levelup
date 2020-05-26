@@ -5,7 +5,6 @@ class Nav extends React.Component {
     super(props);
     this.state = {
       minimized: true,
-      activeIndex: 0,
       navPosition: "translateY(75%)"
     }
     this.handleTabs = this.handleTabs.bind(this);
@@ -19,9 +18,9 @@ class Nav extends React.Component {
   }
 
   handleTabs = index => {
-    this.setState(state => ({
+    this.setState({
       activeIndex: index
-    }));
+    });
   }
 
   render() {
@@ -43,7 +42,7 @@ class Nav extends React.Component {
           <a 
             href="#about" 
             onClick={() => this.handleTabs(0)}
-            className={ this.state.activeIndex === 0 ? "active" : "" }
+            className={ this.props.activeIndex === 0 ? "active" : "" }
           >&nbsp;</a>
         </div>
 
@@ -52,7 +51,7 @@ class Nav extends React.Component {
           <a 
             href="#who" 
             onClick={() => this.handleTabs(1)}
-            className={ this.state.activeIndex === 1 ? "active" : "" }
+            className={ this.props.activeIndex === 1 ? "active" : "" }
           >&nbsp;</a>
         </div>
 
@@ -61,7 +60,7 @@ class Nav extends React.Component {
           <a 
             href="#responsibility" 
             onClick={() => this.handleTabs(2)}
-            className={ this.state.activeIndex === 2 ? "active" : "" }
+            className={ this.props.activeIndex === 2 ? "active" : "" }
           >&nbsp;</a>
         </div>
 
@@ -70,7 +69,16 @@ class Nav extends React.Component {
           <a 
             href="#outcome" 
             onClick={() => this.handleTabs(3)}
-            className={ this.state.activeIndex === 3 ? "active" : "" }
+            className={ this.props.activeIndex === 3 ? "active" : "" }
+          >&nbsp;</a>
+        </div>
+
+        <div className="gradient gradientTransition">
+          <span>FAQ</span>
+          <a 
+            href="#faq" 
+            onClick={() => this.handleTabs(4)}
+            className={ this.props.activeIndex === 4 ? "active" : "" }
           >&nbsp;</a>
         </div>
 
@@ -78,8 +86,8 @@ class Nav extends React.Component {
           <span>Industry People</span>
           <a 
             href="#thankYou" 
-            onClick={() => this.handleTabs(4)}
-            className={ this.state.activeIndex === 4 ? "active" : "" }
+            onClick={() => this.handleTabs(5)}
+            className={ this.props.activeIndex === 5 ? "active" : "" }
           >&nbsp;</a>
         </div>
 
