@@ -18,6 +18,12 @@
   font-weight: 300;
 }
 
+@font-face {
+  font-family: "NB International Mono";
+  src: url("../fonts/NBInternationalMonoWebfont.woff2") format("woff2"),
+    url("../fonts/NBInternationalMonoWebfont.woff") format("woff");
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,22 +62,36 @@ h2 {
   line-height: 3vw;
 }
 
-.sideBar p {
-  font-size: 1.3rem;
+.apply {
+  font-size: 0;
 }
 
-span {
+.sideBar p {
+  font-size: 1.6rem;
+}
+
+.landing span {
   font-family: "NB International Pro", Arial, sans-serif;
   font-size: 1.6vw;
   padding: 0 2rem;
   font-weight: 500;
 }
 
-.navHeader h3 {
+.gradient span {
   font-family: "NB International Pro", Arial, sans-serif;
-  text-transform: uppercase;
+  font-size: 1.2vw;
+  padding: 0 2rem;
+  font-weight: 500;
+}
+
+.navHeader h3, .nav span {
+  font-family: "NB International Pro", Arial, sans-serif;
   font-size: 1.8rem;
   font-weight: 300;
+}
+
+.navHeader h3 {
+  text-transform: uppercase;
 }
 
 .nav a {
@@ -88,7 +108,16 @@ span {
   font-family: "Neue Plak Extended";
 }
 
+.outcome li::before {
+  font-family: "NB International Mono";
+  font-size: 3.5vw;
+}
+
+.outcome div:last-child {
+  font-size: 3vw;
+}
+
 .q {
   font-family: "Neue Plak Extended";
-  font-size: 1.5vw;
+  font-size: 1.5vw
 }
