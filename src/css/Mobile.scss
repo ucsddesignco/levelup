@@ -1,0 +1,178 @@
+@import "./Constants.scss";
+
+$sidebar: 16vw;
+
+@media only screen and (max-width: 500px) {
+  body .sidebar {
+    width: $sidebar;
+
+    img {
+      padding-top: $sidebar - 2vw;
+    }
+  }
+
+  #levelup {
+    background-color: $bg;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: rotate(0);
+    width: 100vw;
+    text-align: center;
+    padding: $sidebar / 2 - 4.1vw;
+    padding-left: $sidebar / 2 - 4.1vw + $sidebar;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+  }
+
+  #summer2020, #nav {
+    display: none;
+  }
+
+  body .container {
+    margin-left: $sidebar;
+    width: 83vw;
+
+    .landing {
+      padding: 0 3rem;
+      padding-top: $sidebar - 2vw;
+
+      .landingEllipse {
+        top: -2vw;
+        left: -4.5vw;
+        width: 47vw;
+        height: 22vw;
+      }
+    }
+
+    .overview {
+      grid-template-columns: 15% 85%;
+      grid-template-rows: auto;
+      grid-template-areas: 
+        "title title"
+        "arrow detail";
+      padding: 8vw;
+    }
+
+    .overviewTitle { 
+      grid-area: title; 
+      margin-bottom: $spacer3;
+    }
+
+    .overviewArrow { 
+      grid-area: arrow; 
+
+      img {
+        width: 5vw;
+      }
+
+      ul {
+        li:nth-child(1) { 
+          img {
+            margin-bottom: 3.6rem;
+          }
+        }
+        li:nth-child(2) { 
+          img {
+            margin-bottom: calc(5vw + 3.6rem);
+          }
+        }
+        li:nth-child(3) { 
+          img {
+            margin-bottom: 3.6rem;
+          }
+        }
+        li:nth-child(4) { 
+          img {
+            margin-bottom: calc(5vw + 3.6rem);
+          }
+        }
+      }
+    }
+
+    .overviewDetails { 
+      grid-area: detail;
+
+      li p {
+        line-height: 5vw;
+        margin-bottom: $spacer2;
+      }
+    }
+
+    .about {
+      position: relative;
+      padding: 8vw;
+
+      h2 {
+        width: 50%;
+        margin-bottom: $spacer4;
+      }
+    }
+
+    .aboutDetails {
+      grid-template-columns: 100%;
+
+      img {
+        position: absolute;
+        top: 5vw;
+        right: 8vw;
+        width: 30%;
+      }
+    }
+
+    .gradient span {
+      font-size: 3.7vw;
+    }
+
+    .who {
+      padding: 8vw;
+    }
+
+    .responsibility {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 35vw;
+      grid-template-areas:
+        "header header"
+        "one two"
+        "three four"
+        "five six";
+
+      div:not(:first-child) {
+        padding: 2rem;
+      }
+    }
+
+    .responsibilityEllipse {
+      top: -6vw;
+      left: -4.5vw;
+      width: 47vw;
+      height: 22vw;
+    }
+
+    .outcome {
+      padding: 8vw; 
+
+      h2 {
+        margin-left: -8vw;
+      }
+
+      div:first-child {
+        padding: 0 0 0 8vw;
+      }
+
+      li::before {
+        margin-top: -2px;
+      }
+      
+      div:last-child {
+        display: none;
+      }
+
+      .hidden {
+        display: block;
+        margin-left: -8vw;
+        margin-bottom: $spacer2;
+      }
+    }
+  }
+}

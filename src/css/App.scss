@@ -2,9 +2,8 @@
 @import "./Constants.scss";
 @import "./Typography.scss";
 @import "./Mixins.scss";
-
-/************************* VARIABLES ***************************/
-$bg: #E5E5E5;
+@import "./Mobile.scss";
+@import "./MobileTypography.scss";
 
 /************************* BASE ***************************/
 body, html {
@@ -15,7 +14,7 @@ body, html {
   counter-reset: responsibility;
 }
 
-.sideBar {
+.sidebar {
   width: 7%;
   height: 100%;
   position: fixed;
@@ -113,6 +112,10 @@ body, html {
   background: linear-gradient(90deg, #F08E34 0%, rgba(52, 240, 57, 0.4), transparent);
 }
 
+.hidden {
+  display: none;
+}
+
 /************************* NAV ***************************/
 .nav {
   position: fixed;
@@ -196,6 +199,10 @@ body, html {
   color: #fff;
   padding: 5vw 8vw;
   box-sizing: border-box;
+}
+
+.overviewTitle {
+  width: 75%;
 }
 
 .overviewArrow {

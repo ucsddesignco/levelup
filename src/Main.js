@@ -9,29 +9,47 @@ class Main extends React.Component {
     this.state = {
       x: 0,
       y: 0,
-      activeIndex: null
+      activeIndex: null,
+      minimized: true,
+      navPosition: "translateY(75%)"
     };
-
-    this.vh = 0.01 * window.innerHeight;
-    this.vw = 0.01 * window.innerWidth;
-    
-    this.landing = 100 * this.vh;
-    this.overview = 40 * this.vw;
-    this.about = 45 * this.vw;
-    this.apply = 150;
-    this.who = 23 * this.vw;
-    this.responsibility = 40 * this.vw;
-    this.outcome = 60 * this.vw;
-    this.faq = 40 * this.vw;
   }
 
   componentDidMount = () => {
     document.addEventListener("mousemove", this.handleGradient);
     window.addEventListener('scroll', this.handleScroll, true);
+    window.addEventListener('resize', this.getElementHeights, true);
+    this.getElementHeights();
   }
 
   componentWillUnmount = () => {
+    document.removeEventListener("mousemove", this.handleGradient);
     window.removeEventListener('scroll', this.handleScroll, true);
+    window.removeEventListener('resize', this.getElementHeights, true);
+  }
+
+  getElementHeights = () => {
+    this.landing = this.landingEl.clientHeight;
+    this.overview = this.overviewEl.clientHeight;
+    this.about = this.aboutEl.clientHeight;
+    this.apply = this.applyEl.clientHeight;
+    this.who = this.whoEl.clientHeight;
+    this.responsibility = this.responsibilityEl.clientHeight;
+    this.outcome = this.outcomeEl.clientHeight;
+    this.faq = this.faqEl.clientHeight;
+    this.thankYou = this.thankYouEl.clientHeight;
+  }
+
+  setActiveIndex = index => {
+    this.setState({
+      activeIndex: index
+    });
+  }
+
+  setNavPosition = y => {
+    this.setState({
+      navPosition: y
+    })
   }
 
   handleScroll = () => {
@@ -51,29 +69,31 @@ class Main extends React.Component {
       })
     }
 
-    if (window.scrollY >= this.landing + this.overview + this.about + this.apply + this.who + this.apply) {
+    if (window.scrollY >= this.landing + this.overview + this.about + (2 * this.apply) + this.who) {
       this.setState({
         activeIndex: 2
       })
     }
 
-    if (window.scrollY >= this.landing + this.overview + this.about + this.apply + this.who + this.apply + this.responsibility + this.apply) {
+    if (window.scrollY >= this.landing + this.overview + this.about + (3 * this.apply)  + this.who + this.responsibility) {
       this.setState({
         activeIndex: 3
       })
     }
 
-    if (window.scrollY >= this.landing + this.overview + this.about + this.apply + this.who + this.apply + this.responsibility + this.apply + this.outcome + this.apply) {
-      this.setState({
-        activeIndex: 4
-      })
+    // at FAQ
+    if (window.scrollY >= this.landing + this.overview + this.about + (4 * this.apply) + this.who + this.responsibility + this.outcome) {
+      this.setNavPosition("translateY(100%)");
+    } else {
+      this.setNavPosition(this.state.minimized ? "translateY(75%)" : "translateY(-10%)");
     }
+  }
 
-    if (window.scrollY >= this.landing + this.overview + this.about + this.apply + this.who + this.apply + this.responsibility + this.apply + this.outcome + this.apply + this.faq) {
-      this.setState({
-        activeIndex: 5
-      })
-    }
+  minimizeNav = () => {
+    this.setState(state => ({
+      navPosition: state.navPosition === "translateY(75%)" ? "translateY(-10%)" : "translateY(75%)",
+      minimized: !state.minimized
+    }));
   }
 
   handleGradient = e => {
@@ -90,20 +110,26 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <div className="sideBar">
-          <p>Summer 2020</p>
+        <div className="sidebar">
+          <p id="summer2020">Summer 2020</p>
           <a href="#landing">
             <img src={require("./images/secondary-logo.svg")} alt="Logo" />
           </a>
-          <p>Level Up</p>
+          <p id="levelup">Level Up</p>
         </div>
 
         <div id="gradientCircle"></div>
 
-        <Nav activeIndex={this.state.activeIndex} />
+        <Nav 
+          activeIndex={this.state.activeIndex} 
+          setActiveIndex={this.setActiveIndex} 
+          minimized={this.state.minimized}
+          navPosition={this.state.navPosition}
+          minimizeNav={this.minimizeNav}
+        />
 
         <div className="container">
-          <div id="landing" className="landing">
+          <div id="landing" className="landing" ref={(landingEl) => {this.landingEl = landingEl}}>
             <h1>
               <img 
                 className="landingEllipse" 
@@ -117,9 +143,9 @@ class Main extends React.Component {
             </h1>
           </div>
 
-          <div className="overview">
-            <div>
-              <h2>The <br/> Overview</h2>
+          <div className="overview" ref={(overviewEl) => {this.overviewEl = overviewEl}}>
+            <div className="overviewTitle">
+              <h2>The Overview</h2>
             </div>
 
             <div className="overviewArrow">
@@ -157,7 +183,7 @@ class Main extends React.Component {
             </div>
           </div>
 
-          <div id="about" className="about">
+          <div id="about" className="about" ref={(aboutEl) => {this.aboutEl = aboutEl}}>
             <h2 style={{ marginBottom: spacer3 }}>What is Level Up?</h2>
 
             <div className="aboutDetails">
@@ -184,7 +210,7 @@ class Main extends React.Component {
             </div>
           </div>
 
-          <div className="gradient gradientTransition">
+          <div className="gradient gradientTransition" ref={(applyEl) => {this.applyEl = applyEl}}>
             <span>
               Seriously, go apply!
               <img src={require("./images/apply-arrow.svg")} alt="" />
@@ -193,7 +219,7 @@ class Main extends React.Component {
           </div>
 
 
-          <div id="who" className="who">
+          <div id="who" className="who" ref={(whoEl) => {this.whoEl = whoEl}}>
             <h2 style={{ marginBottom: spacer3 }}>Who is it for?</h2>
             <div>
               <p>
@@ -216,7 +242,7 @@ class Main extends React.Component {
             <a className="apply" href="https://ucsddesign.co">Sound like you? Apply now!</a>
           </div>
 
-          <div id="responsibility" className="responsibility">
+          <div id="responsibility" className="responsibility" ref={(responsibilityEl) => {this.responsibilityEl = responsibilityEl}}>
             <div className="header">
               <h2>
                 <img 
@@ -283,9 +309,13 @@ class Main extends React.Component {
             <a className="apply" href="https://ucsddesign.co">What are you waiting for? Go apply!</a>
           </div>
 
-          <div id="outcome" className="outcome">
+          <div id="outcome" className="outcome" ref={(outcomeEl) => {this.outcomeEl = outcomeEl}}>
             <div>
-            <h2 style={{ marginBottom: spacer3 }}>What you'll get out of it</h2>
+              <h2 style={{ marginBottom: spacer3 }}>What you'll get out of it</h2>
+              <p className="hidden">
+                We highly encourage you to apply even if you are just starting 
+                out in design!
+              </p>
               <ul>
                 <li>
                   Partaking in a structured program with defined responsibilities
@@ -321,7 +351,7 @@ class Main extends React.Component {
             <a className="apply" href="https://ucsddesign.co">Ready to apply?</a>
           </div>
 
-          <div id="faq" className="faq">
+          <div id="faq" className="faq" ref={(faqEl) => {this.faqEl = faqEl}}>
             <h2 style={{ marginBottom: spacer3 }}>FAQ</h2>
 
             <div className="faqDetails">
@@ -355,7 +385,7 @@ class Main extends React.Component {
             </div>
           </div>
 
-          <div id="thankYou" className="thankYou">
+          <div id="thankYou" className="thankYou" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
             <div>
               <h2>Thank you</h2>
             </div>
