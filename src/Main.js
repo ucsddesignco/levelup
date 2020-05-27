@@ -236,7 +236,7 @@ class Main extends React.Component {
               Seriously, go apply!
               <img src={require("./images/apply-arrow.svg")} alt="" />
             </span>
-            <a className="apply" href="https://ucsddesign.co">Seriously, go apply!</a>
+            <a className="apply" href="https://forms.gle/rvmpX2UdSfrCdQD99">Seriously, go apply!</a>
           </div>
 
 
@@ -267,7 +267,7 @@ class Main extends React.Component {
               Sound like you? Apply now!
               <img src={require("./images/apply-arrow.svg")} alt="" />
             </span>
-            <a className="apply" href="https://ucsddesign.co">Sound like you? Apply now!</a>
+            <a className="apply" href="https://forms.gle/rvmpX2UdSfrCdQD99">Sound like you? Apply now!</a>
           </div>
 
           <div id="responsibility" className="responsibility" ref={(responsibilityEl) => {this.responsibilityEl = responsibilityEl}}>
@@ -320,7 +320,7 @@ class Main extends React.Component {
               What are you waiting for? Go apply!
               <img src={require("./images/apply-arrow.svg")} alt="" />
             </span>
-            <a className="apply" href="https://ucsddesign.co">What are you waiting for? Go apply!</a>
+            <a className="apply" href="https://forms.gle/rvmpX2UdSfrCdQD99">What are you waiting for? Go apply!</a>
           </div>
 
           <div id="outcome" className="outcome" ref={(outcomeEl) => {this.outcomeEl = outcomeEl}}>
@@ -367,7 +367,7 @@ class Main extends React.Component {
               Ready to apply?
               <img src={require("./images/apply-arrow.svg")} alt="" />
             </span>
-            <a className="apply" href="https://ucsddesign.co">Ready to apply?</a>
+            <a className="apply" href="https://forms.gle/rvmpX2UdSfrCdQD99">Ready to apply?</a>
           </div>
 
           <div id="faq" className="faq" ref={(faqEl) => {this.faqEl = faqEl}}>
