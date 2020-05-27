@@ -4,7 +4,7 @@ class Nav extends React.Component {
 
   toggleHamburger = () => {
     document.getElementById("hamburger").classList.toggle("is-active");
-    // document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "hidden auto" ? "scroll" : "hidden auto";
+    document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "visible" ? "hidden" : "visible";
     document.getElementById("nav").classList.toggle("hideNav"); 
 
     if (this.props.mobile) {
@@ -23,7 +23,7 @@ class Nav extends React.Component {
         
         <div 
           id="hamburger"
-          className="hamburger hamburger--spring" 
+          className="hamburger hamburger--squeeze" 
           type="button"
           onClick={this.toggleHamburger}
           style={{display: this.props.mobile ? "block" : "none" }}

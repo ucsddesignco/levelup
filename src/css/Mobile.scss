@@ -8,6 +8,7 @@ $sidebar: 16vw;
       width: 100vw - $sidebar;
       height: 100vw - $sidebar;
       top: calc(50% - 50vw);
+      top: calc(var(--windowHeight) / 2 + 8vw - 42vw);
       left: $sidebar;
     }
   }
@@ -49,6 +50,7 @@ $sidebar: 16vw;
     left: 16vw;
     width: 100vw;
     height: 100vh;
+    height: var(--windowHeight);
     background-color: transparent;
     transform: translate(0);
     border: none;
@@ -71,13 +73,13 @@ $sidebar: 16vw;
 
     div.gradient {
       width: calc(100vw - 16vw);
-      height: calc((100vh - 16vw) / 5);
+      height: calc((var(--windowHeight) - 16vw) / 5);
       border-right: 1px solid black;
 
       span {
         display: table-cell;
         vertical-align: middle;
-        height: calc((100vh - 16vw) / 5 - 3.9rem);
+        height: calc((var(--windowHeight) - 16vw) / 5 - 3.9rem);
       }
     }
 
@@ -86,7 +88,7 @@ $sidebar: 16vw;
 
       &:hover, &.active {
         &::after {
-          height: calc((100vh - 14vw) / 5);
+          height: calc((var(--windowHeight) - 14vw) / 5);
         }
       }
     }
@@ -190,6 +192,7 @@ $sidebar: 16vw;
         top: 5vw;
         right: 8vw;
         width: 30%;
+        margin-top: 0;
       }
     }
 

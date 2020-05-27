@@ -51,10 +51,15 @@ class Main extends React.Component {
     this.outcome = this.outcomeEl.clientHeight;
     this.faq = this.faqEl.clientHeight;
     this.thankYou = this.thankYouEl.clientHeight;
+
+    let windowHeight = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty(
+      "--windowHeight",
+      `${windowHeight * 100}px`
+    );
   }
 
   setActiveIndex = index => {
-    console.log(index);
     this.setState({
       activeIndex: index
     }, () => {

@@ -12,6 +12,7 @@ body, html {
   height: 100%;
   scroll-behavior: smooth;
   counter-reset: responsibility;
+  overflow: visible;
 }
 
 .sidebar {
@@ -220,43 +221,42 @@ body, html {
   bottom: -8px; 
 }
 
-.hamburger--spring {
+.hamburger--squeeze {
   .hamburger-inner {
-    top: $hamburger-layer-height / 2;
-    transition: background-color 0s 0.13s linear;
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     background-color: black;
 
     &::before {
-      top: $hamburger-layer-height + $hamburger-layer-spacing;
-      transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-                  transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition: top 0.075s 0.12s ease,
+                  opacity 0.075s ease;
     }
 
     &::after {
-      top: ($hamburger-layer-height * 2) + ($hamburger-layer-spacing * 2);
-      transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-                  transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition: bottom 0.075s 0.12s ease,
+                  transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
   }
 
   &.is-active {
     .hamburger-inner {
-      transition-delay: 0.22s;
-      background-color: transparent;
+      transform: rotate(45deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
       &::before {
         top: 0;
-        transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-                    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-        transform: translate3d(0, $hamburger-layer-spacing + $hamburger-layer-height, 0) rotate(45deg);
+        opacity: 0;
+        transition: top 0.075s ease,
+                    opacity 0.075s 0.12s ease;
         background-color: black;
       }
 
       &::after {
-        top: 0;
-        transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-                    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-        transform: translate3d(0, $hamburger-layer-spacing + $hamburger-layer-height, 0) rotate(-45deg);
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.075s ease,
+                    transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
         background-color: black;
       }
     }
@@ -267,6 +267,7 @@ body, html {
 .landing {
   position: relative;
   height: 100vh;
+  height: var(--windowHeight);
   padding: 8rem 13rem;
   box-sizing: border-box;
   display: flex;
@@ -542,6 +543,7 @@ ol {
 
 /************************* THANKYOU ***************************/
 .thankYou {
+  position: relative;
   display: grid;
   grid-template-columns: 35% 10% 55%;
   grid-template-rows: 7vw;
