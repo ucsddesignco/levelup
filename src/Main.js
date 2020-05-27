@@ -33,7 +33,7 @@ class Main extends React.Component {
   getElementHeights = () => {
     // Determine if viewing on mobile
     this.setState({
-      mobile: window.innerWidth <= 500
+      mobile: window.innerWidth <= 576
     }, () => {
       if (this.state.mobile) {
         document.removeEventListener("mousemove", this.handleGradient);
@@ -77,6 +77,7 @@ class Main extends React.Component {
   }
 
   handleScroll = () => {
+    // at landing or about
     if (window.scrollY >= this.landing + this.overview) {
       this.setState({
         activeIndex: 0
@@ -87,29 +88,40 @@ class Main extends React.Component {
       })
     }
     
+    // at who
     if (window.scrollY >= this.landing + this.overview + this.about + this.apply) {
       this.setState({
         activeIndex: 1
       })
     }
 
+    // at responsibility
     if (window.scrollY >= this.landing + this.overview + this.about + (2 * this.apply) + this.who) {
       this.setState({
         activeIndex: 2
       })
     }
 
+    // at outcome
     if (window.scrollY >= this.landing + this.overview + this.about + (3 * this.apply)  + this.who + this.responsibility) {
       this.setState({
         activeIndex: 3
       })
+
+      if (window.innerWidth < 1100) {
+        this.setNavPosition("translateY(100%)");  
+      }
+    } else {
+      this.setNavPosition(this.state.minimized ? "translateY(75%)" : "translateY(-10%)");
     }
 
     // at FAQ
     if (window.scrollY >= this.landing + this.overview + this.about + (4 * this.apply) + this.who + this.responsibility + this.outcome) {
       this.setNavPosition("translateY(100%)");
     } else {
-      this.setNavPosition(this.state.minimized ? "translateY(75%)" : "translateY(-10%)");
+      if (window.innerWidth >= 1100) {
+        this.setNavPosition(this.state.minimized ? "translateY(75%)" : "translateY(-10%)");
+      }
     }
   }
 

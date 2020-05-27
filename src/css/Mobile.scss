@@ -2,7 +2,7 @@
 
 $sidebar: 16vw;
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: $sm) {
   body {
     #gradientCircle {
       width: 100vw - $sidebar;
@@ -225,10 +225,10 @@ $sidebar: 16vw;
     }
 
     .responsibilityEllipse {
-      top: -6vw;
-      left: -4.5vw;
-      width: 47vw;
-      height: 22vw;
+      top: -5vw;
+      left: -3.5vw;
+      width: 40vw;
+      height: 20vw;
     }
 
     .outcome {
@@ -318,6 +318,25 @@ $sidebar: 16vw;
         content: url("../images/designco.svg");
         margin-left: 0;
         width: 21vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $lg) and (min-width: $sm + 1) {
+  #nav {
+    width: 30vw;
+
+    .navHeader {
+      margin: 1.5vw 3vw;
+    }
+
+    .gradientTransition {
+      height: calc(1.6vw + 4vw);
+      line-height: calc(1.6vw + 4vw);
+
+      a, span {
+        padding: 2vw 3vw;
       }
     }
   }

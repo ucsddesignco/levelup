@@ -1,6 +1,6 @@
 @import "./Fonts.scss";
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: $sm) {
   body {
     font-size: 4vw;  
   }
@@ -38,5 +38,17 @@
 
   #email {
     font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: $lg) and (min-width: $sm + 1) {
+  .navHeader h3, .nav span {
+    font-size: 1.6vw;
+  }
+}
+
+@media screen and (max-width: $xxxl) and (min-width: $sm + 1) {
+  body {
+    font-size: 2vw;
   }
 }

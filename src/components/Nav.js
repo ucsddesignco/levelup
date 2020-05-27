@@ -62,7 +62,7 @@ class Nav extends React.Component {
         </div>
 
         <div className="gradient gradientTransition">
-          <span>You will be...</span>
+          <span>You will be</span>
           <a 
             href="#responsibility" 
             onClick={() => this.props.setActiveIndex(2)}
@@ -71,7 +71,7 @@ class Nav extends React.Component {
         </div>
 
         <div className="gradient gradientTransition">
-          <span>What you'll get out of it...</span>
+          <span>What you'll get out of it</span>
           <a 
             href="#outcome" 
             onClick={() => this.props.setActiveIndex(3)}

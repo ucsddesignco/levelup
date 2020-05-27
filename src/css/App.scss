@@ -15,7 +15,7 @@ body, html {
 }
 
 .sidebar {
-  width: 7%;
+  width: 7vw;
   height: 100%;
   position: fixed;
   top: 0;
@@ -52,8 +52,8 @@ body, html {
 }
 
 .container {
-  margin-left: 7%;
-  width: 93%;
+  margin-left: 7vw;
+  width: 93vw;
 }
 
 .gradientTransition {
@@ -138,6 +138,7 @@ body, html {
     height: calc(1.8rem + 4rem);
     line-height: calc(1.8rem + 4rem);
     border-top: 1px solid black;
+    overflow: hidden;
 
     span {
       padding: 2rem 4rem;
@@ -352,8 +353,9 @@ body, html {
     grid-template-columns: 60% 40%;
 
     img {
-      width: 70%;
-      justify-self: end;
+      width: 55%;
+      justify-self: center;
+      margin-top: -5vw;
     }
   }
 }
@@ -372,17 +374,17 @@ h2 {
 
 .responsibilityEllipse {
   position: absolute;
-  top: -3vw;
-  left: -2.5vw;
-  width: 24vw;
-  height: 11vw;
+  top: -2.5vw;
+  left: -1.5vw;
+  width: 20vw;
+  height: 10vw;
   pointer-events: none;
 }
 
 .responsibility {
   display: grid;
   grid-template-columns: 100%/3 100%/3 100%/3;
-  grid-template-rows: 20vw 20vw;
+  grid-auto-rows: 1fr;
   grid-template-areas: 
   "header header one"
   "two three four";
@@ -390,7 +392,7 @@ h2 {
   div:not(:first-child) {
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    padding: 4rem;
+    padding: 2.5vw;
     box-sizing: border-box;
   }
 }
@@ -456,7 +458,7 @@ h2 {
     &>img {
       position: absolute;
       right: -5%;
-      top: 10%;
+      top: 0;
       width: 60%;
       height: 80%;
     }
