@@ -4,12 +4,16 @@ class Nav extends React.Component {
 
   toggleHamburger = () => {
     document.getElementById("hamburger").classList.toggle("is-active");
-    document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "visible" ? "hidden" : "visible";
     document.getElementById("nav").classList.toggle("hideNav"); 
 
+    // only on mobile
     if (this.props.mobile) {
+      // hide main content when viewing nav
       let container = document.getElementById("container");
       container.style.visibility = window.getComputedStyle(container).getPropertyValue("visibility") === "visible" ? "hidden" : "visible";
+
+      // prevent scroll when viewing nav
+      document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "visible" ? "hidden" : "visible";
     }
   }
 
