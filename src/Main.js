@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from './components/Nav';
 import QA from './components/QA';
 import { spacer2, spacer3 } from './constants';
+import ReactTestUtils from 'react-dom/test-utils';
 
 class Main extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Main extends React.Component {
     this.state = {
       x: 0,
       y: 0,
+      mobile: false,
       activeIndex: null,
       minimized: true,
       navPosition: "translateY(75%)"
@@ -29,6 +31,15 @@ class Main extends React.Component {
   }
 
   getElementHeights = () => {
+    // Determine if viewing on mobile
+    this.setState({
+      mobile: window.innerWidth <= 500
+    }, () => {
+      if (this.state.mobile) {
+        document.removeEventListener("mousemove", this.handleGradient);
+      }
+    });
+
     this.landing = this.landingEl.clientHeight;
     this.overview = this.overviewEl.clientHeight;
     this.about = this.aboutEl.clientHeight;
@@ -43,6 +54,10 @@ class Main extends React.Component {
   setActiveIndex = index => {
     this.setState({
       activeIndex: index
+    }, () => {
+      // document.getElementById("hamburger").dispatchEvent(new Event("click"));
+      // console.log('clicked');
+      ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
     });
   }
 
@@ -121,14 +136,15 @@ class Main extends React.Component {
         <div id="gradientCircle"></div>
 
         <Nav 
-          activeIndex={this.state.activeIndex} 
-          setActiveIndex={this.setActiveIndex} 
-          minimized={this.state.minimized}
-          navPosition={this.state.navPosition}
-          minimizeNav={this.minimizeNav}
+          mobile = {this.state.mobile}
+          activeIndex = {this.state.activeIndex} 
+          setActiveIndex = {this.setActiveIndex} 
+          minimized = {this.state.minimized}
+          navPosition = {this.state.navPosition}
+          minimizeNav = {this.minimizeNav}
         />
 
-        <div className="container">
+        <div id="container" className="container">
           <div id="landing" className="landing" ref={(landingEl) => {this.landingEl = landingEl}}>
             <h1>
               <img 
@@ -221,6 +237,9 @@ class Main extends React.Component {
 
           <div id="who" className="who" ref={(whoEl) => {this.whoEl = whoEl}}>
             <h2 style={{ marginBottom: spacer3 }}>Who is it for?</h2>
+
+            <img className="hidden" src={require("./images/overview-arrow.svg")} alt="&nbsp;"/>
+
             <div>
               <p>
                 Level Up is open to all UC San Diego undergraduate students 
@@ -248,7 +267,7 @@ class Main extends React.Component {
                 <img 
                   className="responsibilityEllipse" 
                   src={require("./images/ellipse-white.svg")} 
-                  alt="" 
+                  alt="&nbsp;" 
                 />
                 You will be...
               </h2>
@@ -312,10 +331,13 @@ class Main extends React.Component {
           <div id="outcome" className="outcome" ref={(outcomeEl) => {this.outcomeEl = outcomeEl}}>
             <div>
               <h2 style={{ marginBottom: spacer3 }}>What you'll get out of it</h2>
+              
+              <img className="hidden" src={require("./images/star.svg")} alt="&nbsp;"/>
               <p className="hidden">
                 We highly encourage you to apply even if you are just starting 
                 out in design!
               </p>
+
               <ul>
                 <li>
                   Partaking in a structured program with defined responsibilities
@@ -362,7 +384,7 @@ class Main extends React.Component {
                 />
                 <QA
                   question="How will teams be formed?"
-                  answer=""
+                  answer="We will be forming teams based on your strengths, to group people of varying specialties together."
                 />
                 <QA
                   question="Can I add this to my portfolio and/or resume?"
@@ -386,7 +408,7 @@ class Main extends React.Component {
           </div>
 
           <div id="thankYou" className="thankYou" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
-            <div>
+            <div className="overviewTitle">
               <h2>Thank you</h2>
             </div>
 
@@ -409,12 +431,17 @@ class Main extends React.Component {
 
           <div className="footer gradient">
             <p className="signature">
-              Made with
-              <img src={require("./images/heart.svg")} alt="Love" />
-              <img src={require("./images/designco.svg")} alt="Design Co" />
+              <span>
+                Made with
+                <img src={require("./images/heart.svg")} alt="Love" />
+              </span>
+              <img src={require("./images/designco-ellipse.svg")} alt="Design Co" />
             </p>
             
-            <a href="mailto:hello@ucsddesign.co">hello@ucsddesign.co</a>
+            <a 
+              id="email" 
+              href="mailto:hello@ucsddesign.co">hello@ucsddesign.co
+            </a>
           </div>
         </div>
       </div>

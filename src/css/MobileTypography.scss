@@ -22,6 +22,10 @@
     font-size: 4.1vw;
   }
 
+  .nav span {
+    font-size: 4.3rem;
+  }
+
   .overviewDetails li p {
     font-size: 4vw;
   }
@@ -30,5 +34,9 @@
     li::before {
       font-size: 6.5vw;
     }
+  }
+
+  #email {
+    font-size: 2.5vw;
   }
 }

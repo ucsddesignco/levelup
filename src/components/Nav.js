@@ -1,10 +1,36 @@
 import React from 'react';
 
 class Nav extends React.Component {
+
+  toggleHamburger = () => {
+    document.getElementById("hamburger").classList.toggle("is-active");
+    // document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "hidden auto" ? "scroll" : "hidden auto";
+    document.getElementById("nav").classList.toggle("hideNav"); 
+
+    let container = document.getElementById("container");
+    container.style.visibility = window.getComputedStyle(container).getPropertyValue("visibility") === "visible" ? "hidden" : "visible";
+  }
+
   render() {
     return (
-      <div id="nav" className="nav" style={{ transform: `${this.props.navPosition}` }}>
+      <div 
+        id="nav" 
+        className="nav hideNav" 
+        style={{ transform: this.props.mobile ? 'translate(0)' : `${this.props.navPosition}`}}
+      >
         
+        <div 
+          id="hamburger"
+          className="hamburger hamburger--spring" 
+          type="button"
+          onClick={this.toggleHamburger}
+          style={{display: this.props.mobile ? "block" : "none" }}
+        >
+          <div className="hamburger-box">
+            <div className="hamburger-inner"></div>
+          </div>
+        </div>
+
         <div className="navHeader">
           <h3>Website Content</h3>
           <img 
