@@ -67,7 +67,7 @@ body, html {
 
   span {
     position: relative;
-    z-index: 11;
+    z-index: 1;
     pointer-events: none;
   }
 
@@ -86,7 +86,7 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 0;
     background: linear-gradient(90deg, $bg 0%, $bg 100%);
     transform: translateX(0);
     transition: 0.5s linear;
@@ -119,7 +119,7 @@ body, html {
 /************************* NAV ***************************/
 .nav {
   position: fixed;
-  z-index: 12;
+  z-index: 2;
   right: 5rem;
   bottom: 0;
   width: 40rem;
@@ -287,6 +287,7 @@ body, html {
 
 /************************* OVERVIEW ***************************/
 .overview {
+  position: relative;
   display: grid;
   grid-template-columns: 35% 10% 55%;
   grid-template-rows: 30vw;
@@ -380,11 +381,11 @@ h2 {
 
 .responsibility {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 100%/3 100%/3 100%/3;
   grid-template-rows: 20vw 20vw;
   grid-template-areas: 
-    "header header one two"
-    "three four five six";
+  "header header one"
+  "two three four";
 
   div:not(:first-child) {
     border-right: 1px solid black;
@@ -406,8 +407,6 @@ h2 {
 .two { grid-area: two; }
 .three { grid-area: three; }
 .four { grid-area: four; }
-.five { grid-area: five; }
-.six { grid-area: six; }
 
 .counter::before {
   counter-increment: responsibility;

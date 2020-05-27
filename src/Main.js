@@ -37,6 +37,8 @@ class Main extends React.Component {
     }, () => {
       if (this.state.mobile) {
         document.removeEventListener("mousemove", this.handleGradient);
+      } else {
+        document.addEventListener("mousemove", this.handleGradient);
       }
     });
 
@@ -52,12 +54,19 @@ class Main extends React.Component {
   }
 
   setActiveIndex = index => {
+    console.log(index);
     this.setState({
       activeIndex: index
     }, () => {
-      // document.getElementById("hamburger").dispatchEvent(new Event("click"));
-      // console.log('clicked');
-      ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+      if (index !== null || document.getElementById("hamburger").classList.contains("is-active")) {
+        ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+      }
+        
+      setTimeout(() => {
+        if (this.state.mobile) {
+          window.scrollBy(0, -16 * 0.01 * window.innerWidth);
+        }
+      }, 1000);
     });
   }
 
@@ -125,9 +134,11 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+        <h1 id="levelupHeader" className="hidden">Level Up</h1>
+
         <div className="sidebar">
           <p id="summer2020">Summer 2020</p>
-          <a href="#landing">
+          <a href="#landing" onClick={() => this.setActiveIndex(null)}>
             <img src={require("./images/secondary-logo.svg")} alt="Logo" />
           </a>
           <p id="levelup">Level Up</p>
@@ -184,7 +195,7 @@ class Main extends React.Component {
             <div className="overviewDetails">
               <ul>
                 <li>
-                  <p>June 29 - September 4, 2020</p>
+                  <p>June 29 to September 4, 2020</p>
                 </li>
                 <li>
                   <p>12 to 15 hour commitment per week</p>
@@ -205,19 +216,13 @@ class Main extends React.Component {
             <div className="aboutDetails">
               <div>
                 <div>
-                  <p style={{ marginBottom: spacer2 }}>
+                  <p>
                     Level Up is a 10-week design program that provides students 
                     with the opportunity to tackle a real-world challenge and 
                     network with experienced industry professionals. 
                     Participants will work in teams of four to produce a 
                     website showcase of project deliverables with the guidance 
                     of industry mentors.
-                  </p>
-                  <p>
-                    Our program is different from a typical project class because 
-                    participants will have the chance to work in an established 
-                    role within a team, be mentored throughout the entire design 
-                    process, and attend talks by industry leaders.  
                   </p>
                 </div>
               </div>
@@ -241,14 +246,18 @@ class Main extends React.Component {
             <img className="hidden" src={require("./images/overview-arrow.svg")} alt="&nbsp;"/>
 
             <div>
-              <p>
+              <p style={{ marginBottom: spacer2 }}>
                 Level Up is open to all UC San Diego undergraduate students 
-                who want to strengthen their design skills. This program isn't 
-                intended to teach students design fundamentals or tools, but 
-                rather targeted toward those who haven't had an internship and 
-                are ready to take the next step in their design journey. We're 
-                looking for dedicated individuals ready to jump into a high 
-                level commitment over the summer.
+                who want to strengthen their design skills and work with a team 
+                on a 10-week project. 
+              </p>
+              <p>
+                This program isn't intended to teach students design 
+                fundamentals or tools, but rather targeted toward those who do 
+                not have a summer internship and are ready to take the next 
+                step in their design journey. We're looking for dedicated 
+                individuals eager to jump into a high-level commitment over the 
+                summer.
               </p>
             </div>
           </div>
@@ -269,7 +278,7 @@ class Main extends React.Component {
                   src={require("./images/ellipse-white.svg")} 
                   alt="&nbsp;" 
                 />
-                You will be...
+                You will be
               </h2>
             </div>
 
@@ -277,34 +286,20 @@ class Main extends React.Component {
               <p className="counter"></p>
               <p>
                 Working in an established role within a team of four students 
-                on a design project
+                on a design project (Roles include UX Researcher, UX Designer, Visual 
+                Designer, UX Engineer, Content Strategist)
               </p>
             </div>
 
             <div className="two">
               <p className="counter"></p>
               <p>
-                Involved in a role including UX Researcher, UX Designer, Visual 
-                Designer, UX Engineer, Content Strategist
+                Working through the entire design process, from needfinding to 
+                usability testing
               </p>
             </div>
 
             <div className="three">
-              <p className="counter"></p>
-              <p>
-                Working through the entire design process, from needfinding to 
-                usability testing  
-              </p>
-            </div>
-
-            <div className="four">
-              <p className="counter"></p>
-              <p>
-                Committing 12 to 15 hours per week
-              </p>
-            </div>
-
-            <div className="five">
               <p className="counter"></p>
               <p>
                 Meeting up in Zoom calls to have group discussions and 
@@ -312,7 +307,7 @@ class Main extends React.Component {
               </p>
             </div>
 
-            <div className="six">
+            <div className="four">
               <p className="counter"></p>
               <p>
                 Meeting weekly with an industry mentor to go over project milestones
@@ -334,8 +329,9 @@ class Main extends React.Component {
               
               <img className="hidden" src={require("./images/star.svg")} alt="&nbsp;"/>
               <p className="hidden">
-                We highly encourage you to apply even if you are just starting 
-                out in design!
+                By participating in our program, you'll get a small taste of 
+                the corporate experience through working in a cross-functional 
+                team.
               </p>
 
               <ul>
@@ -343,10 +339,10 @@ class Main extends React.Component {
                   Partaking in a structured program with defined responsibilities
                 </li>
                 <li>
-                  Receiving mentorship from experienced industry designers
+                  Receiving mentorship from experienced industry professionals
                 </li>
                 <li>
-                  Attending biweekly talks by industry leaders 
+                  Attending biweekly talks by industry leaders from various fields
                 </li>
                 <li>
                   Finishing the program with a high-quality case study to put on your portfolio
@@ -359,8 +355,9 @@ class Main extends React.Component {
 
               <p>
                 <img src={require("./images/overview-arrow.svg")} alt="" />
-                We highly encourage you to apply even if you are just starting 
-                out in design!
+                By participating in our program, you'll get a small taste of 
+                the corporate experience through working in a cross-functional 
+                team.
               </p>
             </div>
           </div>
@@ -379,16 +376,20 @@ class Main extends React.Component {
             <div className="faqDetails">
               <div>
                 <QA
+                  question="How is Level Up different from doing a personal project?"
+                  answer="Our program is different from a personal project because participants will have the chance to work in an established role within a team, be mentored throughout the entire design process, and attend talks by industry leaders from various fields."
+                />
+                <QA
                   question="What does mentorship from an industry partner look like?"
-                  answer=""
+                  answer="Each team will be assigned two mentors who are well versed in industry. The mentors will alternate meeting with the teams each week to check-in and discuss project milestones. You’ll be able to depend on your mentor for informal advice, critique sessions, design direction, and guidance to make sure your project is developing in the right direction."
+                />
+                <QA
+                  question="How will the industry-led talks be run?"
+                  answer="The industry talks will be open to the public, and each talk will have a core focus on one of the following topics: Collaboration, Storytelling, Critiquing, or Building Connections. There will be a different industry leader speaking at each talk, and Level Up participants will have an exclusive 15-minute Q&A session with the speaker."
                 />
                 <QA
                   question="How will teams be formed?"
-                  answer="We will be forming teams based on your strengths, to group people of varying specialties together."
-                />
-                <QA
-                  question="Can I add this to my portfolio and/or resume?"
-                  answer="Yes! At the end of the program, participants will have a high-quality case study that they can add to their resume and portfolios. "
+                  answer="Teams will be assigned based on the applicant’s strengths and preferred roles. In our application, you’ll be listing the roles that you’re interested in, which includes UX Researcher, UX Designer, Visual Designer, UX Engineer, and Content Strategist. There’s also a portion of the application where you’ll have a chance to list students you want to work with. We’ll try our best to balance mutual preference, though this is not guaranteed."
                 />
               </div>
 
@@ -396,12 +397,16 @@ class Main extends React.Component {
 
               <div>
                 <QA
-                  question="Should I apply if I don't have much design experience?"
-                  answer="We are looking for students who have some design background, which includes design classes, design projects, design sprints, internships, and other related experience. Our program is not intended to teach students design fundamentals or tools, but rather for students who have some skills under their belt and are ready to take the next step in their design journey. "
+                  question="Can I add this to my portfolio and/or resume?"
+                  answer="Definitely! At the end of the program, participants will have a high-quality project deliverable that they can add as a case study to their resume and portfolio."
                 />
                 <QA
-                  question="I have an internship this summer. Can I apply?"
-                  answer="No. Our program is targeted toward students who haven’t had an internship before and are looking to apply their design skills to a team project over the summer."
+                  question="Should I apply if I don't have much design experience?"
+                  answer="We’re looking for students who already have some design background, which can include design classes, design projects, design sprints, internships, and other related experience. Our program is not intended to teach students design fundamentals or tools, but rather for students who have some skills under their belt and want to apply them to a team project over the summer."
+                />
+                <QA
+                  question="Can I apply if I have an internship this summer?"
+                  answer="Our program is targeted toward students who do not have a summer internship and are ready to take the next step in their design journey."
                 />
               </div>
             </div>
@@ -423,7 +428,7 @@ class Main extends React.Component {
             <div className="overviewDetails">
               <ul>
                 <li>
-                  <p>To our industry partners for supporting Level Up!</p>
+                  <p>To our industry mentors for supporting Level Up!</p>
                 </li>
               </ul>
             </div>

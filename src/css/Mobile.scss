@@ -7,40 +7,44 @@ $sidebar: 16vw;
     #gradientCircle {
       width: 100vw - $sidebar;
       height: 100vw - $sidebar;
-      top: calc(50% - (100vw - 16vw) / 2);
+      top: calc(50% - 50vw);
       left: $sidebar;
     }
   }
 
   body .sidebar {
+    height: calc(100% - 16vw);
     width: $sidebar;
-    z-index: 12;
-
-    img {
-      padding-top: $sidebar - 2vw;
-    }
+    top: initial;
+    bottom: 0;
+    z-index: 1;
+    border: solid;
+    border-width: 1px 1px 0 0;
   }
 
-  #levelup {
+  #levelupHeader {
+    display: block;
     background-color: $bg;
     position: fixed;
+    z-index: 2;
     top: 0;
-    left: 0;
+    left: $sidebar;
     transform: rotate(0);
-    width: 100vw;
-    height: $sidebar;
+    width: calc(100vw - 16vw);
+    height: 16vw;
     text-align: center;
     padding: $sidebar / 2 - 4.1vw;
-    padding-left: $sidebar / 2 - 4.1vw + $sidebar;
+    border: solid;
+    border-width: 0 0 1px 1px;
     box-sizing: border-box;
-    border-bottom: 1px solid black;
   }
 
-  #summer2020 {
+  #levelup, #summer2020 {
     display: none;
   }
 
   #nav {
+    z-index: 0;
     top: 0;
     left: 16vw;
     width: 100vw;
@@ -66,17 +70,19 @@ $sidebar: 16vw;
     }
 
     div.gradient {
-      height: calc((100vh - 14vw) / 5);
+      width: calc(100vw - 16vw);
+      height: calc((100vh - 16vw) / 5);
       border-right: 1px solid black;
 
       span {
-        line-height: calc((100vh - 14vw) / 5);
+        display: table-cell;
+        vertical-align: middle;
+        height: calc((100vh - 16vw) / 5 - 3.9rem);
       }
     }
 
     .gradientTransition a {
-      z-index: 11;
-      width: calc(100% - 16vw);
+      z-index: 0;
 
       &:hover, &.active {
         &::after {
@@ -98,13 +104,17 @@ $sidebar: 16vw;
 
     .landing {
       padding: 0 3rem;
-      padding-top: $sidebar - 2vw;
+      margin-top: $sidebar;
+
+      h1 {
+        top: -$sidebar / 2;
+      }
 
       .landingEllipse {
         top: -2vw;
-        left: -4.5vw;
-        width: 47vw;
-        height: 22vw;
+        left: -2.5vw;
+        width: 34vw;
+        height: 17vw;
       }
     }
 
@@ -207,8 +217,7 @@ $sidebar: 16vw;
       grid-template-areas:
         "header header"
         "one two"
-        "three four"
-        "five six";
+        "three four";
 
       div:not(:first-child) {
         padding: 2rem;

@@ -7,8 +7,10 @@ class Nav extends React.Component {
     // document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "hidden auto" ? "scroll" : "hidden auto";
     document.getElementById("nav").classList.toggle("hideNav"); 
 
-    let container = document.getElementById("container");
-    container.style.visibility = window.getComputedStyle(container).getPropertyValue("visibility") === "visible" ? "hidden" : "visible";
+    if (this.props.mobile) {
+      let container = document.getElementById("container");
+      container.style.visibility = window.getComputedStyle(container).getPropertyValue("visibility") === "visible" ? "hidden" : "visible";
+    }
   }
 
   render() {
