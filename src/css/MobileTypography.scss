@@ -45,6 +45,19 @@
   .navHeader h3, .nav span {
     font-size: 1.6vw;
   }
+
+  .landing {
+    #apply {
+      span {
+        font-size: 2vw;
+
+        img {
+          width: 2vw;
+          margin-left: 1.5vw;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: $xxxl) and (min-width: $sm + 1) {

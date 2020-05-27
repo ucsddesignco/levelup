@@ -185,6 +185,15 @@ class Main extends React.Component {
               <span> real-world </span> problems with the guidance of 
               <span> industry </span> mentors.
             </h1>
+            
+            <div id="apply">
+              <span>
+                <a href="https://forms.gle/rvmpX2UdSfrCdQD99">
+                  Apply Now!
+                  <img src={require("./images/apply-arrow.svg")} alt="" />
+                  </a>
+              </span>
+            </div>
           </div>
 
           <div className="overview" ref={(overviewEl) => {this.overviewEl = overviewEl}}>

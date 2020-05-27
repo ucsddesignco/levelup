@@ -107,6 +107,7 @@ $sidebar: 16vw;
     .landing {
       padding: 0 3rem;
       margin-top: $sidebar;
+      align-items: center;
 
       h1 {
         top: -$sidebar / 2;
