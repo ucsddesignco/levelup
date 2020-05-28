@@ -136,8 +136,8 @@ body, html {
 
   .gradientTransition {
     text-align: inherit;
-    height: calc(1.8rem + 4rem);
-    line-height: calc(1.8rem + 4rem);
+    height: calc(1.8rem + 5rem);
+    line-height: calc(1.8rem + 5rem);
     border-top: 1px solid black;
     overflow: hidden;
 
@@ -159,7 +159,8 @@ body, html {
 }
 
 .navHeader {
-  margin: 2rem 4rem;
+  margin: 0 4rem;
+  height: calc(1.8rem + 5rem);
   display: flex;
   justify-content: space-between;
   align-items: center;

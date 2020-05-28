@@ -40,6 +40,10 @@ class Main extends React.Component {
       } else {
         document.addEventListener("mousemove", this.handleGradient);
       }
+
+      if (this.state.activeIndex !== null || document.getElementById("hamburger").classList.contains("is-active")) {
+        ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+      }
     });
 
     this.landing = this.landingEl.clientHeight;
