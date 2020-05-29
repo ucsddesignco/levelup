@@ -13,7 +13,7 @@ class Main extends React.Component {
       mobile: false,
       activeIndex: null,
       minimized: true,
-      navPosition: "translateY(75%)"
+      navPosition: "translateY(75%)",
     };
   }
 
@@ -74,6 +74,14 @@ class Main extends React.Component {
       "--windowHeight",
       `${windowHeight * 100}px`
     );
+
+    // Calculate height
+    var D = document;
+    this.total_height = Math.max(
+      Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+      Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+      Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+    )
   }
 
   setActiveIndex = index => {
@@ -139,12 +147,19 @@ class Main extends React.Component {
 
     // at FAQ
     if (window.scrollY >= this.landing + this.overview + this.about + (4 * this.apply) + this.who + this.responsibility + this.outcome) {
+      this.setState({
+        activeIndex: 4
+      })
+    }
+
+    // nav leaves window
+    if (window.pageYOffset + window.innerHeight >= this.total_height) {
       this.setNavPosition("translateY(100%)");
     } else {
       if (window.innerWidth >= 1100) {
         this.setNavPosition(this.state.minimized ? "translateY(75%)" : "translateY(-10%)");
       }
-    }
+    } 
   }
 
   minimizeNav = () => {

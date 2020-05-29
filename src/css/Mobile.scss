@@ -7,8 +7,6 @@ $sidebar: 16vw;
     #gradientCircle {
       width: 100vw - $sidebar;
       height: 100vw - $sidebar;
-      // top: calc(50% - 50vw);
-      // top: calc(var(--windowHeight) / 2 + 8vw - 42vw);
       top: 10vh;
       left: $sidebar;
     }
@@ -28,7 +26,7 @@ $sidebar: 16vw;
     display: block;
     background-color: $bg;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: $sidebar;
     transform: rotate(0);
@@ -77,6 +75,16 @@ $sidebar: 16vw;
       height: calc((var(--windowHeight) - 16vw) / 5);
       border-right: 1px solid black;
       opacity: 0;
+
+      &::before {
+        content: "";
+        width: calc(100vw - 16vw);
+        height: calc((var(--windowHeight) - 16vw) / 5);
+        background-color: $bg;
+        display: block;
+        position: absolute;
+        z-index: -1;
+      }
 
       span {
         display: table-cell;
@@ -150,6 +158,11 @@ $sidebar: 16vw;
       }
 
       ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
         li:nth-child(1) { 
           img {
             margin-bottom: 3.6rem;
@@ -340,6 +353,17 @@ $sidebar: 16vw;
 }
 
 @media screen and (max-width: $lg) and (min-width: $sm + 1) {
+  body {
+    .sidebar {
+      width: 10vw;
+    }
+  
+    .container {
+      margin-left: 10vw;
+      width: 90vw;
+    }
+  }
+
   #nav {
     width: 30vw;
 
