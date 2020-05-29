@@ -55,6 +55,7 @@ body, html {
 .container {
   margin-left: 7vw;
   width: 93vw;
+  transition: 0.3s;
 }
 
 .gradientTransition {
@@ -132,6 +133,8 @@ body, html {
 
   .gradient {
     border: none;
+    transition: 0.5s;
+    opacity: 0;
   }
 
   .gradientTransition {
@@ -222,42 +225,42 @@ body, html {
   bottom: -8px; 
 }
 
-.hamburger--squeeze {
+.hamburger--spin {
   .hamburger-inner {
-    transition-duration: 0.075s;
+    transition-duration: 0.22s;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     background-color: black;
 
     &::before {
-      transition: top 0.075s 0.12s ease,
-                  opacity 0.075s ease;
+      transition: top 0.1s 0.25s ease-in,
+                  opacity 0.1s ease-in;
     }
 
     &::after {
-      transition: bottom 0.075s 0.12s ease,
-                  transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition: bottom 0.1s 0.25s ease-in,
+                  transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
   }
 
   &.is-active {
     .hamburger-inner {
-      transform: rotate(45deg);
+      transform: rotate(225deg);
       transition-delay: 0.12s;
       transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
       &::before {
         top: 0;
         opacity: 0;
-        transition: top 0.075s ease,
-                    opacity 0.075s 0.12s ease;
+        transition: top 0.1s ease-out,
+                    opacity 0.1s 0.12s ease-out;
         background-color: black;
       }
 
       &::after {
         bottom: 0;
         transform: rotate(-90deg);
-        transition: bottom 0.075s ease,
-                    transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: bottom 0.1s ease-out,
+                    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
         background-color: black;
       }
     }
@@ -494,8 +497,7 @@ h2 {
 
     &::before {
       content: "*";
-      margin: -8px 3rem 0 calc(-2.5vw - 3rem);
-      height: 3vw;
+      margin: calc(-1.4vw / 2) 2rem 0 calc(-2.5vw - 2rem);
     }
   }
 }
@@ -509,7 +511,7 @@ h2 {
 
 .faqDetails {
   display: grid;
-  grid-template-columns: calc(40% + 3vw) 10% calc(40% + 3vw);
+  grid-template-columns: calc(40% + 3vw) calc(20% - 6vw) calc(40% + 3vw);
 }
 
 .faq-item {
@@ -535,8 +537,8 @@ h2 {
     width: 1vw;
     height: 1vw;
     position: absolute;
-    top: calc(1.5vw / 2);
-    left: calc(-2vw - 1vw);
+    top: 1.5rem;
+    left: calc(-2.5vw - 1rem);
     background-image: url("../images/qa.svg");
     background-repeat: no-repeat;
     background-size: contain;

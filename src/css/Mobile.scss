@@ -103,7 +103,7 @@ $sidebar: 16vw;
 
   body .container {
     margin-left: $sidebar;
-    width: 83vw;
+    width: 84vw;
 
     .landing {
       padding: 0 3rem;
@@ -256,6 +256,7 @@ $sidebar: 16vw;
 
       li::before {
         margin-top: -2px;
+        margin-left: calc(-3.5vw - 4rem);
       }
       
       div:last-child {

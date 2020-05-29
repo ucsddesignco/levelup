@@ -3,17 +3,22 @@ import React from 'react';
 class Nav extends React.Component {
 
   toggleHamburger = () => {
+    // toggle hamburger menu
     document.getElementById("hamburger").classList.toggle("is-active");
     document.getElementById("nav").classList.toggle("hideNav"); 
-
-    // only on mobile
-    if (this.props.mobile) {
-      // hide main content when viewing nav
+    
+    // toggle prevent scroll
+    document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "visible" ? "hidden" : "visible";
+    
+    setTimeout(() => {
+      // toggle main content visibility
       let container = document.getElementById("container");
       container.style.visibility = window.getComputedStyle(container).getPropertyValue("visibility") === "visible" ? "hidden" : "visible";
+    }, 300);
 
-      // prevent scroll when viewing nav
-      document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "visible" ? "hidden" : "visible";
+    let gradient = document.getElementsByClassName("gradient");
+    for (let i = 0; i < gradient.length; i++) {
+      gradient[i].style.opacity = window.getComputedStyle(gradient[i]).getPropertyValue("opacity") === "0" ? "100" : "0";
     }
   }
 
@@ -27,7 +32,7 @@ class Nav extends React.Component {
         
         <div 
           id="hamburger"
-          className="hamburger hamburger--squeeze" 
+          className="hamburger hamburger--spin" 
           type="button"
           onClick={this.toggleHamburger}
           style={{display: this.props.mobile ? "block" : "none" }}

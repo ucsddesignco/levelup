@@ -39,10 +39,10 @@ class Main extends React.Component {
         document.removeEventListener("mousemove", this.handleGradient);
       } else {
         document.addEventListener("mousemove", this.handleGradient);
-      }
-
-      if (this.state.activeIndex !== null || document.getElementById("hamburger").classList.contains("is-active")) {
-        ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+      
+        if (document.getElementById("hamburger").classList.contains("is-active")) {
+          ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+        }
       }
     });
 
@@ -192,7 +192,7 @@ class Main extends React.Component {
             
             <div id="apply">
               <span>
-                <a href="https://forms.gle/rvmpX2UdSfrCdQD99">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">
                   Apply Now!
                   <img src={require("./images/apply-arrow.svg")} alt="" />
                   </a>
@@ -266,7 +266,7 @@ class Main extends React.Component {
               Seriously, go apply!
               <img src={require("./images/apply-arrow.svg")} alt="" />
             </span>
-            <a className="apply" href="https://forms.gle/rvmpX2UdSfrCdQD99">Seriously, go apply!</a>
+            <a className="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">Seriously, go apply!</a>
           </div>
 
 
@@ -297,7 +297,7 @@ class Main extends React.Component {
               Sound like you? Apply now!
               <img src={require("./images/apply-arrow.svg")} alt="" />
             </span>
-            <a className="apply" href="https://forms.gle/rvmpX2UdSfrCdQD99">Sound like you? Apply now!</a>
+            <a className="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">Sound like you? Apply now!</a>
           </div>
 
           <div id="responsibility" className="responsibility" ref={(responsibilityEl) => {this.responsibilityEl = responsibilityEl}}>
@@ -350,7 +350,7 @@ class Main extends React.Component {
               What are you waiting for? Go apply!
               <img src={require("./images/apply-arrow.svg")} alt="" />
             </span>
-            <a className="apply" href="https://forms.gle/rvmpX2UdSfrCdQD99">What are you waiting for? Go apply!</a>
+            <a className="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">What are you waiting for? Go apply!</a>
           </div>
 
           <div id="outcome" className="outcome" ref={(outcomeEl) => {this.outcomeEl = outcomeEl}}>
@@ -397,7 +397,7 @@ class Main extends React.Component {
               Ready to apply?
               <img src={require("./images/apply-arrow.svg")} alt="" />
             </span>
-            <a className="apply" href="https://forms.gle/rvmpX2UdSfrCdQD99">Ready to apply?</a>
+            <a className="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">Ready to apply?</a>
           </div>
 
           <div id="faq" className="faq" ref={(faqEl) => {this.faqEl = faqEl}}>

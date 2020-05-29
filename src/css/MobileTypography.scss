@@ -63,5 +63,11 @@
 @media screen and (max-width: $xxxl) and (min-width: $sm + 1) {
   body {
     font-size: 2vw;
+
+    .q {
+      &:before {
+        top: 1.2vw;
+      }
+    }
   }
 }
