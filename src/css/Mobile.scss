@@ -204,6 +204,10 @@ $sidebar: 16vw;
       }
     }
 
+    &>.gradient {
+      opacity: 1 !important;
+    }
+
     .gradient span {
       font-size: 3.7vw;
     }
