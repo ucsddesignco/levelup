@@ -37,11 +37,24 @@ class Main extends React.Component {
     }, () => {
       if (this.state.mobile) {
         document.removeEventListener("mousemove", this.handleGradient);
+
+        // hide nav
+        let gradient = document.getElementsByClassName("gradient");
+        for (let i = 0; i < gradient.length; i++) {
+          gradient[i].style.opacity = "0";
+        }
       } else {
-        document.addEventListener("mousemove", this.handleGradient);
-      
         if (document.getElementById("hamburger").classList.contains("is-active")) {
           ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+        }
+
+        // remove gradient mouse
+        document.addEventListener("mousemove", this.handleGradient);
+
+        // show nav
+        let gradient = document.getElementsByClassName("gradient");
+        for (let i = 0; i < gradient.length; i++) {
+          gradient[i].style.opacity = "100";
         }
       }
     });

@@ -3,22 +3,24 @@ import React from 'react';
 class Nav extends React.Component {
 
   toggleHamburger = () => {
-    // toggle hamburger menu
-    document.getElementById("hamburger").classList.toggle("is-active");
-    document.getElementById("nav").classList.toggle("hideNav"); 
-    
-    // toggle prevent scroll
-    document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "visible" ? "hidden" : "visible";
-    
-    setTimeout(() => {
-      // toggle main content visibility
-      let container = document.getElementById("container");
-      container.style.visibility = window.getComputedStyle(container).getPropertyValue("visibility") === "visible" ? "hidden" : "visible";
-    }, 300);
+    if (this.props.mobile) {
+      // toggle hamburger menu
+      document.getElementById("hamburger").classList.toggle("is-active");
+      document.getElementById("nav").classList.toggle("hideNav"); 
 
-    let gradient = document.getElementsByClassName("gradient");
-    for (let i = 0; i < gradient.length; i++) {
-      gradient[i].style.opacity = window.getComputedStyle(gradient[i]).getPropertyValue("opacity") === "0" ? "100" : "0";
+      // toggle prevent scroll
+      document.body.style.overflow = window.getComputedStyle(document.body).getPropertyValue("overflow") === "visible" ? "hidden" : "visible";
+
+      setTimeout(() => {
+        // toggle main content visibility
+        let container = document.getElementById("container");
+        container.style.visibility = window.getComputedStyle(container).getPropertyValue("visibility") === "visible" ? "hidden" : "visible";
+      }, 300);
+
+      let gradient = document.getElementsByClassName("gradient");
+      for (let i = 0; i < gradient.length; i++) {
+        gradient[i].style.opacity = window.getComputedStyle(gradient[i]).getPropertyValue("opacity") === "0" ? "100" : "0";
+      }
     }
   }
 

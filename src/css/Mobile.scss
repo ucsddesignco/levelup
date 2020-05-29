@@ -76,6 +76,7 @@ $sidebar: 16vw;
       width: calc(100vw - 16vw);
       height: calc((var(--windowHeight) - 16vw) / 5);
       border-right: 1px solid black;
+      opacity: 0;
 
       span {
         display: table-cell;
