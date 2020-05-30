@@ -7,7 +7,7 @@ $sidebar: 16vw;
     #gradientCircle {
       width: 100vw - $sidebar;
       height: 100vw - $sidebar;
-      top: 10vh;
+      top: calc(25% - 16vw);
       left: $sidebar;
     }
   }
@@ -113,12 +113,18 @@ $sidebar: 16vw;
   body .container {
     margin-left: $sidebar;
     width: 84vw;
+    padding-top: $sidebar;
+
+    #about, #who, #responsibility, #outcome, #faq {
+      display: block;
+      padding-bottom: $sidebar;
+      margin-top: -$sidebar;
+    }
 
     .landing {
       padding: 0 3rem;
-      margin-top: $sidebar;
       align-items: center;
-      height: calc(var(--windowHeight) - 16vw);
+      height: calc(var(--windowHeight) - 32vw);
 
       h1 {
         top: -$sidebar / 2;

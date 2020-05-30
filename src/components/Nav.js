@@ -8,7 +8,7 @@ class Nav extends React.Component {
       document.getElementById("hamburger").classList.toggle("is-active");
       document.getElementById("nav").classList.toggle("hideNav"); 
 
-      // 
+      // toggle nav z-index
       let nav = document.getElementById("nav");
       nav.style.zIndex = window.getComputedStyle(nav).getPropertyValue("z-index") === "0" ? "3" : "0";
 

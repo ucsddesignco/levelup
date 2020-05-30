@@ -43,12 +43,16 @@ class Main extends React.Component {
         for (let i = 0; i < gradient.length; i++) {
           gradient[i].style.opacity = "0";
         }
+
+        // send nav to back
+        document.getElementById("nav").style.zIndex = "0";
       } else {
+        // close hamburger menu
         if (document.getElementById("hamburger").classList.contains("is-active")) {
           ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
         }
 
-        // remove gradient mouse
+        // add gradient mouse
         document.addEventListener("mousemove", this.handleGradient);
 
         // show nav
@@ -56,6 +60,9 @@ class Main extends React.Component {
         for (let i = 0; i < gradient.length; i++) {
           gradient[i].style.opacity = "100";
         }
+
+        // senc nav to front
+        document.getElementById("nav").style.zIndex = "3";
       }
     });
 
@@ -91,12 +98,6 @@ class Main extends React.Component {
       if (index !== null || document.getElementById("hamburger").classList.contains("is-active")) {
         ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
       }
-        
-      setTimeout(() => {
-        if (this.state.mobile) {
-          window.scrollBy(0, -16 * 0.01 * window.innerWidth);
-        }
-      }, 1000);
     });
   }
 
@@ -268,7 +269,8 @@ class Main extends React.Component {
             </div>
           </div>
 
-          <div id="about" className="about" ref={(aboutEl) => {this.aboutEl = aboutEl}}>
+          <span id="about"></span>
+          <div className="about" ref={(aboutEl) => {this.aboutEl = aboutEl}}>
             <h2 style={{ marginBottom: spacer3 }}>What is Level Up?</h2>
 
             <div className="aboutDetails">
@@ -297,8 +299,8 @@ class Main extends React.Component {
             <a className="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">Seriously, go apply!</a>
           </div>
 
-
-          <div id="who" className="who" ref={(whoEl) => {this.whoEl = whoEl}}>
+          <span id="who"></span>
+          <div className="who" ref={(whoEl) => {this.whoEl = whoEl}}>
             <h2 style={{ marginBottom: spacer3 }}>Who is it for?</h2>
 
             <img className="hidden" src={require("./images/overview-arrow.svg")} alt="&nbsp;"/>
@@ -328,7 +330,8 @@ class Main extends React.Component {
             <a className="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">Sound like you? Apply now!</a>
           </div>
 
-          <div id="responsibility" className="responsibility" ref={(responsibilityEl) => {this.responsibilityEl = responsibilityEl}}>
+          <span id="responsibility"></span>
+          <div className="responsibility" ref={(responsibilityEl) => {this.responsibilityEl = responsibilityEl}}>
             <div className="header">
               <h2>
                 <img 
@@ -381,7 +384,8 @@ class Main extends React.Component {
             <a className="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">What are you waiting for? Go apply!</a>
           </div>
 
-          <div id="outcome" className="outcome" ref={(outcomeEl) => {this.outcomeEl = outcomeEl}}>
+          <span id="outcome"></span>
+          <div className="outcome" ref={(outcomeEl) => {this.outcomeEl = outcomeEl}}>
             <div>
               <h2 style={{ marginBottom: spacer3 }}>What you'll get out of it</h2>
               
@@ -428,7 +432,8 @@ class Main extends React.Component {
             <a className="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfjlpRfux76HLZGS16r46jHiqqvA-Q1H9cyG1YkyUySoXiMrg/viewform">Ready to apply?</a>
           </div>
 
-          <div id="faq" className="faq" ref={(faqEl) => {this.faqEl = faqEl}}>
+          <span id="faq"></span>
+          <div className="faq" ref={(faqEl) => {this.faqEl = faqEl}}>
             <h2 style={{ marginBottom: spacer3 }}>FAQ</h2>
 
             <div className="faqDetails">

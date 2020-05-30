@@ -125,7 +125,7 @@ body, html {
 /************************* NAV ***************************/
 .nav {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   right: 5rem;
   bottom: 0;
   width: 40rem;
@@ -411,6 +411,7 @@ h2 {
 }
 
 .responsibility {
+  position: relative;
   display: grid;
   grid-template-columns: 100%/3 100%/3 100%/3;
   grid-auto-rows: 1fr;
