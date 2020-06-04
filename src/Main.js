@@ -61,7 +61,7 @@ class Main extends React.Component {
           gradient[i].style.opacity = "100";
         }
 
-        // senc nav to front
+        // send nav to front
         document.getElementById("nav").style.zIndex = "3";
       }
     });
@@ -77,7 +77,7 @@ class Main extends React.Component {
     this.thankYou = this.thankYouEl.clientHeight;
 
     let windowHeight = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty(
+    document.documentElement.style.setProperty (
       "--windowHeight",
       `${windowHeight * 100}px`
     );
@@ -119,21 +119,21 @@ class Main extends React.Component {
       })
     }
     
-    // at who
+    // At who
     if (window.scrollY >= this.landing + this.overview + this.about + this.apply) {
       this.setState({
         activeIndex: 1
       })
     }
 
-    // at responsibility
+    // At responsibility
     if (window.scrollY >= this.landing + this.overview + this.about + (2 * this.apply) + this.who) {
       this.setState({
         activeIndex: 2
       })
     }
 
-    // at outcome
+    // At outcome
     if (window.scrollY >= this.landing + this.overview + this.about + (3 * this.apply)  + this.who + this.responsibility) {
       this.setState({
         activeIndex: 3
@@ -146,14 +146,14 @@ class Main extends React.Component {
       this.setNavPosition(this.state.minimized ? "translateY(75%)" : "translateY(-10%)");
     }
 
-    // at FAQ
+    // At FAQ
     if (window.scrollY >= this.landing + this.overview + this.about + (4 * this.apply) + this.who + this.responsibility + this.outcome) {
       this.setState({
         activeIndex: 4
       })
     }
 
-    // nav leaves window
+    // Nav box leaves view
     if (window.pageYOffset + window.innerHeight >= this.total_height) {
       this.setNavPosition("translateY(100%)");
     } else {
@@ -307,9 +307,9 @@ class Main extends React.Component {
 
             <div>
               <p style={{ marginBottom: spacer2 }}>
-                Level Up is open to all UC San Diego undergraduate students 
-                who want to strengthen their design skills and work with a team 
-                on a 10-week project. 
+                Level Up is open to all UC San Diego undergraduate and recent 
+                graduate students who want to strengthen their design skills 
+                and work with a team on a 10-week project. 
               </p>
               <p>
                 This program isn't intended to teach students design 
