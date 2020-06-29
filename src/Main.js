@@ -313,8 +313,8 @@ class Main extends React.Component {
               </p>
               <p>
                 This program isn't intended to teach students design 
-                fundamentals or tools, but rather targeted toward those who do 
-                not have a summer internship and are ready to take the next 
+                fundamentals or tools, but rather targeted toward those who 
+                don't have a summer internship and are ready to take the next 
                 step in their design journey. We're looking for dedicated 
                 individuals eager to jump into a high-level commitment over the 
                 summer.
@@ -387,7 +387,7 @@ class Main extends React.Component {
           <span id="outcome"></span>
           <div className="outcome" ref={(outcomeEl) => {this.outcomeEl = outcomeEl}}>
             <div>
-              <h2 style={{ marginBottom: spacer3 }}>What you'll get out of it</h2>
+              <h2 style={{ marginBottom: spacer3 }}>What you will get out of it</h2>
               
               <img className="hidden" src={require("./images/star.svg")} alt="&nbsp;"/>
               <p className="hidden">
@@ -440,11 +440,11 @@ class Main extends React.Component {
               <div>
                 <QA
                   question="How is Level Up different from doing a personal project?"
-                  answer="Our program is different from a personal project because participants will have the chance to work in an established role within a team, be mentored throughout the entire design process, and attend talks by industry leaders from various fields."
+                  answer="Our program is different from a personal project because you'll have the chance to work in an established role within a team, be mentored throughout the entire design process, and attend talks by industry leaders from various fields."
                 />
                 <QA
                   question="What kind of projects will I be working on?"
-                  answer="Participants will work on projects that have real impact. They can choose to tackle one of the four problem spaces: design for the voter experience, design for small business recovery, design for low income communities, and design for remote education."
+                  answer="You'll work on projects that have real impact. You can choose to tackle one of the four problem spaces: design for the voter experience, design for small business recovery, design for low income communities, and design for remote education."
                 />
                 <QA
                   question="What does mentorship from an industry partner look like?"
@@ -452,7 +452,7 @@ class Main extends React.Component {
                 />
                 <QA
                   question="How will the industry-led talks be run?"
-                  answer="The industry talks will be open to the public, and each talk will have a core focus on one of the following topics: Collaboration, Storytelling, Critiquing, or Building Connections. There will be a different industry leader speaking at each talk, and Level Up participants will have an exclusive 15-minute Q&A session with the speaker."
+                  answer="The industry talks will be open to the public, and each talk will have a core focus on one of the following topics: Collaboration, Storytelling, Critiquing, or Building Connections. There will be a different industry leader speaking at each talk, and you'll have an exclusive 15-minute Q&A session with the speaker."
                 />
               </div>
 
@@ -461,19 +461,19 @@ class Main extends React.Component {
               <div>
                 <QA
                   question="How will teams be formed?"
-                  answer="Teams will be assigned based on the applicant’s strengths and preferred roles. In our application, you’ll be listing the roles that you’re interested in, which includes UX Researcher, UX Designer, Visual Designer, UX Engineer, and Content Strategist. There’s also a portion of the application where you’ll have a chance to list students you want to work with. We’ll try our best to balance mutual preference, though this is not guaranteed."
+                  answer="Teams will be assigned based on the applicant’s strengths and preferred roles. In our application, you’ll be listing the roles that you’re interested in, which includes UX Researcher, UX Designer, Visual Designer, UX Engineer, and Content Strategist. There’s also a portion of the application where you’ll have a chance to list students you want to work with. We’ll try our best to balance mutual preference, though this isn't guaranteed."
                 />
                 <QA
                   question="Can I add this to my portfolio and/or resume?"
-                  answer="Definitely! At the end of the program, participants will have a high-quality project deliverable that they can add as a case study to their resume and portfolio."
+                  answer="Definitely! At the end of the program, you'll have a high-quality project deliverable that you can add as a case study to your resume and portfolio."
                 />
                 <QA
                   question="Should I apply if I don't have much design experience?"
-                  answer="We’re looking for students who already have some design background, which can include design classes, design projects, design sprints, internships, and other related experience. Our program is not intended to teach students design fundamentals or tools, but rather for students who have some skills under their belt and want to apply them to a team project over the summer."
+                  answer="We’re looking for students who already have some design background, which can include design classes, design projects, design sprints, internships, and other related experience. Our program isn't intended to teach students design fundamentals or tools, but rather for students who have some skills under their belt and want to apply them to a team project over the summer."
                 />
                 <QA
                   question="Can I apply if I have an internship this summer?"
-                  answer="Our program is targeted toward students who do not have a summer internship and are ready to take the next step in their design journey."
+                  answer="Our program is targeted toward students who don't have a summer internship and are ready to take the next step in their design journey."
                 />
               </div>
             </div>
