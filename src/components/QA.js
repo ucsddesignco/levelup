@@ -27,7 +27,7 @@ class QA extends React.Component {
           className={ this.state.isToggleOn ? "q active" : "q" } 
           onClick={ this.handleFAQ }
         >
-          <p>{this.props.question}</p>
+          <p className="faq-title">{this.props.question}</p>
         </div>
 
         <div 

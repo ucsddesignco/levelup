@@ -5,14 +5,12 @@
 @import "./Mobile.scss";
 @import "./MobileTypography.scss";
 
-/************************* BASE ***************************/
+// Custom Cursor
 body {
   cursor: url(../images/cursor.png), auto;
 }
 
 #landing.landing {
-  width: 100%;
-  height: auto;
   cursor: auto;
 }
 
@@ -23,6 +21,8 @@ body {
 .sidebar {
   cursor: auto;
 }
+
+/************************* BASE ***************************/
 
 html {
   overflow-x: hidden;
@@ -549,6 +549,12 @@ h2 {
     padding: 0;
   }
 }
+
+.faq-title:hover {
+  opacity: 0.6;
+  cursor: url(../images/cursor.png), auto;
+}
+
 
 .q {
   cursor: pointer;
