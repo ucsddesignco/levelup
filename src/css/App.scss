@@ -6,6 +6,10 @@
 @import "./MobileTypography.scss";
 
 /************************* BASE ***************************/
+* {
+  cursor: url(../images/cursor.png), auto;
+}
+
 html {
   overflow-x: hidden;
 }
