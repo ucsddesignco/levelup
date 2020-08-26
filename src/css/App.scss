@@ -6,8 +6,22 @@
 @import "./MobileTypography.scss";
 
 /************************* BASE ***************************/
-* {
+body {
   cursor: url(../images/cursor.png), auto;
+}
+
+#landing.landing {
+  width: 100%;
+  height: auto;
+  cursor: auto;
+}
+
+#nav {
+  cursor: auto;
+}
+
+.sidebar {
+  cursor: auto;
 }
 
 html {
