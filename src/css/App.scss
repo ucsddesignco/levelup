@@ -101,6 +101,16 @@ body, html {
     vertical-align: middle;
   }
 
+  .column {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+  }
+  
+  .row {
+    padding: 10% 10%;
+  }
+
   .apply {
     height: 8rem;
   }

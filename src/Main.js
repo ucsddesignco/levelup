@@ -255,8 +255,21 @@ class Main extends React.Component {
             </div>
           </div>
 
-
         {/* Team Photos */}
+        <div className="row">
+            <div className="column">
+              <p>Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
+              <h2>Group 1</h2>
+            </div>
+            <div className="column">
+              <p>Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
+              <h2>Group 2</h2>
+            </div>
+            <div className="column">
+              <p>Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
+              <h2>Group 3</h2>
+            </div>
+        </div>
 
 
           <div id="thankYou" className="thankYou" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
