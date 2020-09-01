@@ -395,6 +395,8 @@ body, html {
   box-sizing: border-box;
   border: solid;
   border-width: 0 1px 1px 0;
+  background-color: #000;
+  color: #fff;
 
   .aboutDetails {
     display: grid;
@@ -523,6 +525,19 @@ h2 {
       margin: calc(-1.4vw / 2) 2rem 0 calc(-2.5vw - 2rem);
     }
   }
+}
+
+
+/*************** Meet the Level Uppers ******************/
+
+.meetTitle {
+  position: relative;
+  grid-template-columns: 35% 10% 55%;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  padding: 1.5rem 8vw;
+  box-sizing: border-box;
 }
 
 /************************* FAQ ***************************/
