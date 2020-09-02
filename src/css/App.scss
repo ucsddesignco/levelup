@@ -7,7 +7,8 @@
 
 // Custom Cursor
 body {
-  cursor: url(../images/cursor.png), auto;
+  // cursor: url(../images/cursor.png), auto;
+  z-index: -100;
 }
 
 #landing.landing {
@@ -28,7 +29,8 @@ html {
   overflow-x: hidden;
 }
 
-body, html {
+body,
+html {
   background-color: $bg;
   position: relative;
   height: 100%;
@@ -72,6 +74,8 @@ body, html {
   position: absolute;
   left: var(--x);
   top: var(--y);
+  z-index: -75;
+  cursor: auto;
 }
 
 .container {
@@ -106,7 +110,7 @@ body, html {
     width: 33.33%;
     text-align: center;
   }
-  
+
   .row {
     padding: 10% 10%;
   }
@@ -114,7 +118,7 @@ body, html {
   .apply {
     height: 8rem;
   }
-  
+
   a {
     position: absolute;
     top: 0;
@@ -125,12 +129,14 @@ body, html {
     transform: translateX(0);
     transition: 0.5s linear;
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
       transform: translateX(100%);
       transition: 0.5s linear;
 
-      &::after { // Prevent jumping on hover
-        content: '';
+      &::after {
+        // Prevent jumping on hover
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
@@ -143,7 +149,12 @@ body, html {
 }
 
 .gradient {
-  background: linear-gradient(90deg, #F08E34 0%, rgba(52, 240, 57, 0.4), transparent);
+  background: linear-gradient(
+    90deg,
+    #f08e34 0%,
+    rgba(52, 240, 57, 0.4),
+    transparent
+  );
 }
 
 .hidden {
@@ -155,7 +166,7 @@ body, html {
   position: fixed;
   z-index: 3;
   right: 5rem;
-  bottom: 0;
+  bottom: 2rem;
   width: 40rem;
   height: auto;
   border: 1px solid black;
@@ -219,41 +230,44 @@ body, html {
   background-color: transparent;
   border: 0;
   margin: 0 20px 0 0;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .hamburger-box {
   width: 4rem;
   height: 4rem;
   display: inline-block;
-  position: relative; 
+  position: relative;
 }
 
 .hamburger-inner {
   display: block;
   top: 50%;
 }
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
   width: 4rem;
   height: 0.2rem;
-  background-color: inherit; 
+  background-color: inherit;
   position: absolute;
   transition-property: transform;
   transition-duration: 0.15s;
-  transition-timing-function: ease; 
+  transition-timing-function: ease;
 }
 
-.hamburger-inner::before, .hamburger-inner::after {
+.hamburger-inner::before,
+.hamburger-inner::after {
   content: "";
-  display: block; 
+  display: block;
 }
 
 .hamburger-inner::before {
-  top: -8px; 
+  top: -8px;
 }
 
 .hamburger-inner::after {
-  bottom: -8px; 
+  bottom: -8px;
 }
 
 .hamburger--spin {
@@ -263,13 +277,12 @@ body, html {
     background-color: black;
 
     &::before {
-      transition: top 0.1s 0.25s ease-in,
-                  opacity 0.1s ease-in;
+      transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
     }
 
     &::after {
       transition: bottom 0.1s 0.25s ease-in,
-                  transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
   }
 
@@ -282,8 +295,7 @@ body, html {
       &::before {
         top: 0;
         opacity: 0;
-        transition: top 0.1s ease-out,
-                    opacity 0.1s 0.12s ease-out;
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
         background-color: black;
       }
 
@@ -291,7 +303,7 @@ body, html {
         bottom: 0;
         transform: rotate(-90deg);
         transition: bottom 0.1s ease-out,
-                    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+          transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
         background-color: black;
       }
     }
@@ -309,6 +321,7 @@ body, html {
   align-items: flex-end;
   flex-direction: column;
   justify-content: space-evenly;
+  z-index: -50;
 
   h1 {
     position: relative;
@@ -361,28 +374,28 @@ body, html {
 
 .overviewArrow {
   ul {
-    li:nth-child(1) { 
+    li:nth-child(1) {
       img {
         margin-bottom: 3.5vw;
       }
     }
-    li:nth-child(2) { 
+    li:nth-child(2) {
       img {
         margin-bottom: 7vw;
       }
     }
-    li:nth-child(3) { 
+    li:nth-child(3) {
       img {
         margin-bottom: 3.5vw;
       }
     }
-    li:nth-child(4) { 
+    li:nth-child(4) {
       img {
         margin-bottom: 7vw;
       }
     }
   }
-  
+
   li {
     display: grid;
   }
@@ -446,9 +459,9 @@ h2 {
   display: grid;
   grid-template-columns: 100%/3 100%/3 100%/3;
   grid-auto-rows: 1fr;
-  grid-template-areas: 
-  "header header one"
-  "two three four";
+  grid-template-areas:
+    "header header one"
+    "two three four";
 
   div:not(:first-child) {
     border-right: 1px solid black;
@@ -466,10 +479,18 @@ h2 {
   align-items: center;
   justify-content: center;
 }
-.one {grid-area: one; }
-.two { grid-area: two; }
-.three { grid-area: three; }
-.four { grid-area: four; }
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
 
 .counter::before {
   counter-increment: responsibility;
@@ -516,7 +537,7 @@ h2 {
       }
     }
 
-    &>img {
+    & > img {
       position: absolute;
       right: -5%;
       top: 0;
@@ -536,7 +557,6 @@ h2 {
     }
   }
 }
-
 
 /*************** Meet the Level Uppers ******************/
 
@@ -580,7 +600,6 @@ h2 {
   cursor: url(../images/cursor.png), auto;
 }
 
-
 .q {
   cursor: pointer;
   margin-bottom: $spacer1;
@@ -605,7 +624,8 @@ h2 {
   }
 }
 
-.a-show, .a-hidden {
+.a-show,
+.a-hidden {
   max-height: 0;
   overflow-y: hidden;
   transition: max-height 0.3s ease;
