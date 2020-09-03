@@ -249,18 +249,6 @@ class Main extends React.Component {
           </div>
 
         {/* Showcase Section */}
-        
-
-
-        {/* Meet The Level Uppers */}
-        <div id="meetTitle" className="meetTitle" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
-            <div className="meetTitle">
-              <h2>Meet the Level Uppers</h2>
-            </div>
-          </div>
-
-        {/* Showcase Items */}
-
         <div>
           <div className="who" ref={(whoEl) => {this.whoEl = whoEl}}>
             <h2 style={{ marginBottom: spacer2 }}>Showcase</h2>
@@ -292,6 +280,26 @@ class Main extends React.Component {
               </Container>
           </div>
         </div>
+
+        {/* Meet The Level Uppers */}
+        <div id="meetTitle" className="meetTitle" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
+            <div className="meetTitle">
+              <h2>Meet the Level Uppers</h2>
+            </div>
+          </div>
+
+        {/* Team Snapshot */}
+        <div className="who" ref={(whoEl) => {this.whoEl = whoEl}}>
+              <Container>
+                <Row>
+                  <div>
+                    <img className="showcase-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/F1_light_blue_flag.svg/2000px-F1_light_blue_flag.svg.png" alt="" />
+                    <p className="team-members">Vooglers</p>
+                    <h2 className="team-name">Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</h2>
+                  </div>
+                </Row>
+              </Container>
+          </div>
       
 
           <div id="thankYou" className="thankYou" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
