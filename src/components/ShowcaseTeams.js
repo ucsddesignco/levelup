@@ -154,7 +154,7 @@ export const ShowcaseTeams = [
         },
         {
           member_name: "Samantha Cheung",
-          member_image: require("../images/kidsnextstore/visualdesigner.png"),
+          member_image: require("../images/kidsnextstore/samanthacheung.png"),
           position: "Visual Designer"
         }
       ],

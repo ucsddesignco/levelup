@@ -1,14 +1,20 @@
-import React from 'react';
-import { ShowcaseTeams } from './ShowcaseTeams';
+import React from "react";
+import { ShowcaseTeams } from "./ShowcaseTeams";
 
-function Showcase() {
-    return(
-        <div>
-            <img className="showcase-img" src={ShowcaseTeams[0].image_path} alt="" />
-            <p className="team-members">{ShowcaseTeams[0].team_members}</p>
-            <h2 className="team-name">{ShowcaseTeams[0].team_name}</h2>
-        </div>
+class Showcase extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <img className="showcase-img" src={this.props.image} alt="" />
+        <h5 className="team-members">{this.props.members}</h5>
+        <h2 className="team-name">{this.props.name}</h2>
+      </div>
     );
+  }
 }
 
 export default Showcase;

@@ -5,6 +5,12 @@ import { spacer2, spacer3 } from "./constants";
 import ReactTestUtils from "react-dom/test-utils";
 import { Container, Row, Col } from "react-grid-system";
 import Showcase from "./components/Showcase";
+import { ShowcaseTeams } from "./components/ShowcaseTeams";
+
+const voterExperience = ShowcaseTeams.slice(0, 3);
+const businessRecovery = ShowcaseTeams.slice(3);
+
+console.log(voterExperience, businessRecovery);
 
 class Main extends React.Component {
   constructor(props) {
@@ -308,10 +314,37 @@ class Main extends React.Component {
 
           {/* Showcase Section */}
           <div>
-            <Row>
-              <Col>
-              Hello</Col>
-            </Row>
+            <Container>
+              <h2 style={{ marginBottom: spacer3 }}>Showcase</h2>
+              <h3>Designing for the Voter Experience</h3>
+              <Row>
+                {voterExperience.map((team, index) => {
+                  return (
+                    <Col xs={12} sm={6} md={4}>
+                      <Showcase
+                        image={team.image_path}
+                        name={team.team_name}
+                        members={team.team_members}
+                      />
+                    </Col>
+                  );
+                })}
+              </Row>
+              <h3>Designing for Small Business Recovery</h3>
+              <Row>
+                {businessRecovery.map((team, index) => {
+                  return (
+                    <Col xs={12} sm={6} md={4}>
+                      <Showcase
+                        image={team.image_path}
+                        name={team.team_name}
+                        members={team.team_members}
+                      />
+                    </Col>
+                  );
+                })}
+              </Row>
+            </Container>
           </div>
 
           {/* Meet The Level Uppers */}

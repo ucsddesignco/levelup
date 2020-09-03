@@ -28,7 +28,8 @@ h1 {
   font-size: 5vw;
 }
 
-h1, .sidebar p {
+h1,
+.sidebar p {
   font-family: "Neue Plak Extended";
 }
 
@@ -36,6 +37,12 @@ h2 {
   font-family: "Neue Plak Extended";
   font-size: 3vw;
   line-height: 3.5vw;
+}
+
+h3 {
+  font-family: "Neue Plak Extended";
+  font-size: 2vw;
+  line-height: 2.5vw;
 }
 
 .topic-title {
@@ -84,7 +91,8 @@ h2 {
   font-weight: 500;
 }
 
-.navHeader h3, .nav span {
+.navHeader h3,
+.nav span {
   font-family: "NB International Pro", Arial, sans-serif;
   font-size: 1.8rem;
   font-weight: 500;
