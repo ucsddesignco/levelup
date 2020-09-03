@@ -1,11 +1,10 @@
-import React from 'react';
-import Nav from './components/Nav';
-import QA from './components/QA';
-import { spacer2, spacer3 } from './constants';
-import ReactTestUtils from 'react-dom/test-utils';
-import {Container, Row, Col} from 'react-grid-system';
-import Showcase from './components/Showcase'
-
+import React from "react";
+import Nav from "./components/Nav";
+import QA from "./components/QA";
+import { spacer2, spacer3 } from "./constants";
+import ReactTestUtils from "react-dom/test-utils";
+import { Container, Row, Col } from "react-grid-system";
+import Showcase from "./components/Showcase";
 
 class Main extends React.Component {
   constructor(props) {
@@ -16,58 +15,63 @@ class Main extends React.Component {
       mobile: false,
       activeIndex: null,
       minimized: true,
-      navPosition: "translateY(75%)",
+      navPosition: "translateY(75%)"
     };
   }
 
   componentDidMount = () => {
     document.addEventListener("mousemove", this.handleGradient);
-    window.addEventListener('scroll', this.handleScroll, true);
-    window.addEventListener('resize', this.getElementHeights, true);
+    window.addEventListener("scroll", this.handleScroll, true);
+    window.addEventListener("resize", this.getElementHeights, true);
     this.getElementHeights();
-  }
+  };
 
   componentWillUnmount = () => {
     document.removeEventListener("mousemove", this.handleGradient);
-    window.removeEventListener('scroll', this.handleScroll, true);
-    window.removeEventListener('resize', this.getElementHeights, true);
-  }
+    window.removeEventListener("scroll", this.handleScroll, true);
+    window.removeEventListener("resize", this.getElementHeights, true);
+  };
 
   getElementHeights = () => {
     // Determine if viewing on mobile
-    this.setState({
-      mobile: window.innerWidth <= 576
-    }, () => {
-      if (this.state.mobile) {
-        document.removeEventListener("mousemove", this.handleGradient);
+    this.setState(
+      {
+        mobile: window.innerWidth <= 576
+      },
+      () => {
+        if (this.state.mobile) {
+          document.removeEventListener("mousemove", this.handleGradient);
 
-        // hide nav
-        let gradient = document.getElementsByClassName("gradient");
-        for (let i = 0; i < gradient.length; i++) {
-          gradient[i].style.opacity = "0";
+          // hide nav
+          let gradient = document.getElementsByClassName("gradient");
+          for (let i = 0; i < gradient.length; i++) {
+            gradient[i].style.opacity = "0";
+          }
+
+          // send nav to back
+          document.getElementById("nav").style.zIndex = "0";
+        } else {
+          // close hamburger menu
+          if (
+            document.getElementById("hamburger").classList.contains("is-active")
+          ) {
+            ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+          }
+
+          // add gradient mouse
+          document.addEventListener("mousemove", this.handleGradient);
+
+          // show nav
+          let gradient = document.getElementsByClassName("gradient");
+          for (let i = 0; i < gradient.length; i++) {
+            gradient[i].style.opacity = "100";
+          }
+
+          // send nav to front
+          document.getElementById("nav").style.zIndex = "3";
         }
-
-        // send nav to back
-        document.getElementById("nav").style.zIndex = "0";
-      } else {
-        // close hamburger menu
-        if (document.getElementById("hamburger").classList.contains("is-active")) {
-          ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
-        }
-
-        // add gradient mouse
-        document.addEventListener("mousemove", this.handleGradient);
-
-        // show nav
-        let gradient = document.getElementsByClassName("gradient");
-        for (let i = 0; i < gradient.length; i++) {
-          gradient[i].style.opacity = "100";
-        }
-
-        // send nav to front
-        document.getElementById("nav").style.zIndex = "3";
       }
-    });
+    );
 
     this.landing = this.landingEl.clientHeight;
     // this.overview = this.overviewEl.clientHeight;
@@ -80,7 +84,7 @@ class Main extends React.Component {
     this.thankYou = this.thankYouEl.clientHeight;
 
     let windowHeight = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty (
+    document.documentElement.style.setProperty(
       "--windowHeight",
       `${windowHeight * 100}px`
     );
@@ -91,69 +95,100 @@ class Main extends React.Component {
       Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
       Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
       Math.max(D.body.clientHeight, D.documentElement.clientHeight)
-    )
-  }
+    );
+  };
 
   setActiveIndex = index => {
-    this.setState({
-      activeIndex: index
-    }, () => {
-      if (index !== null || document.getElementById("hamburger").classList.contains("is-active")) {
-        ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+    this.setState(
+      {
+        activeIndex: index
+      },
+      () => {
+        if (
+          index !== null ||
+          document.getElementById("hamburger").classList.contains("is-active")
+        ) {
+          ReactTestUtils.Simulate.click(document.getElementById("hamburger"));
+        }
       }
-    });
-  }
+    );
+  };
 
   setNavPosition = y => {
     this.setState({
       navPosition: y
-    })
-  }
+    });
+  };
 
   handleScroll = () => {
     // at landing or about
     if (window.scrollY >= this.landing + this.overview) {
       this.setState({
         activeIndex: 0
-      })
+      });
     } else {
       this.setState({
         activeIndex: null
-      })
+      });
     }
-    
+
     // At who
-    if (window.scrollY >= this.landing + this.overview + this.about + this.apply) {
+    if (
+      window.scrollY >=
+      this.landing + this.overview + this.about + this.apply
+    ) {
       this.setState({
         activeIndex: 1
-      })
+      });
     }
 
     // At responsibility
-    if (window.scrollY >= this.landing + this.overview + this.about + (2 * this.apply) + this.who) {
+    if (
+      window.scrollY >=
+      this.landing + this.overview + this.about + 2 * this.apply + this.who
+    ) {
       this.setState({
         activeIndex: 2
-      })
+      });
     }
 
     // At outcome
-    if (window.scrollY >= this.landing + this.overview + this.about + (3 * this.apply)  + this.who + this.responsibility) {
+    if (
+      window.scrollY >=
+      this.landing +
+        this.overview +
+        this.about +
+        3 * this.apply +
+        this.who +
+        this.responsibility
+    ) {
       this.setState({
         activeIndex: 3
-      })
+      });
 
       if (window.innerWidth < 1100) {
-        this.setNavPosition("translateY(100%)");  
+        this.setNavPosition("translateY(100%)");
       }
     } else {
-      this.setNavPosition(this.state.minimized ? "translateY(75%)" : "translateY(-10%)");
+      this.setNavPosition(
+        this.state.minimized ? "translateY(75%)" : "translateY(-10%)"
+      );
     }
 
     // At FAQ
-    if (window.scrollY >= this.landing + this.overview + this.about + (4 * this.apply) + this.who + this.responsibility + this.outcome) {
+    if (
+      window.scrollY >=
+      this.landing +
+        this.overview +
+        this.about +
+        4 * this.apply +
+        this.who +
+        this.responsibility +
+        this.outcome
+    ) {
       this.setState({
         activeIndex: 4
-      })
+      });
     }
 
     // Nav box leaves view
@@ -161,17 +196,22 @@ class Main extends React.Component {
       this.setNavPosition("translateY(100%)");
     } else {
       if (window.innerWidth >= 1100) {
-        this.setNavPosition(this.state.minimized ? "translateY(75%)" : "translateY(-10%)");
+        this.setNavPosition(
+          this.state.minimized ? "translateY(75%)" : "translateY(-10%)"
+        );
       }
-    } 
-  }
+    }
+  };
 
   minimizeNav = () => {
     this.setState(state => ({
-      navPosition: state.navPosition === "translateY(75%)" ? "translateY(-10%)" : "translateY(75%)",
+      navPosition:
+        state.navPosition === "translateY(75%)"
+          ? "translateY(-10%)"
+          : "translateY(75%)",
       minimized: !state.minimized
     }));
-  }
+  };
 
   handleGradient = e => {
     this.setState({
@@ -180,14 +220,16 @@ class Main extends React.Component {
     });
 
     let gradientCircle = document.getElementById("gradientCircle");
-    gradientCircle.style.setProperty('--x', this.state.x + 'px');
-    gradientCircle.style.setProperty('--y', this.state.y + 'px');
-  }
+    gradientCircle.style.setProperty("--x", this.state.x + "px");
+    gradientCircle.style.setProperty("--y", this.state.y + "px");
+  };
 
   render() {
     return (
       <div>
-        <h1 id="levelupHeader" className="hidden">Level Up</h1>
+        <h1 id="levelupHeader" className="hidden">
+          Level Up
+        </h1>
 
         <div className="sidebar">
           <p id="summer2020">Summer 2020</p>
@@ -199,43 +241,54 @@ class Main extends React.Component {
 
         <div id="gradientCircle"></div>
 
-        <Nav 
-          mobile = {this.state.mobile}
-          activeIndex = {this.state.activeIndex} 
-          setActiveIndex = {this.setActiveIndex} 
-          minimized = {this.state.minimized}
-          navPosition = {this.state.navPosition}
-          minimizeNav = {this.minimizeNav}
+        <Nav
+          mobile={this.state.mobile}
+          activeIndex={this.state.activeIndex}
+          setActiveIndex={this.setActiveIndex}
+          minimized={this.state.minimized}
+          navPosition={this.state.navPosition}
+          minimizeNav={this.minimizeNav}
         />
 
         <div id="container" className="container">
-          <div id="landing" className="landing" ref={(landingEl) => {this.landingEl = landingEl}}>
+          <div
+            id="landing"
+            className="landing"
+            ref={landingEl => {
+              this.landingEl = landingEl;
+            }}
+          >
             <h1>
-              <img 
-                className="landingEllipse" 
-                src={require("./images/ellipse-black.svg")} 
-                alt="" 
+              <img
+                className="landingEllipse"
+                src={require("./images/ellipse-black.svg")}
+                alt=""
               />
               Level Up challenges <span>motivated</span> design students to
-              develop <span> innovative </span> solutions to 
-              <span> real-world </span> problems with the guidance of 
+              develop <span> innovative </span> solutions to
+              <span> real-world </span> problems with the guidance of
               <span> industry </span> mentors.
             </h1>
           </div>
           <span id="about"></span>
-          <div className="about" ref={(aboutEl) => {this.aboutEl = aboutEl}}>
+          <div
+            className="about"
+            ref={aboutEl => {
+              this.aboutEl = aboutEl;
+            }}
+          >
             <h2 style={{ marginBottom: spacer3 }}>What is Level Up?</h2>
 
             <div className="aboutDetails">
               <div>
                 <div>
                   <p>
-                    Level Up is a 10-week design program that provides students 
-                    with the opportunity to tackle a real-world challenge and 
-                    network with experienced industry professionals. 
-                    Participants will work in teams of four to produce a 
-                    website showcase of project deliverables with the guidance 
-                    of industry mentors.
+                    Level Up is a 10-week design program that provides students
+                    with the opportunity to tackle a real-world challenge and
+                    network with experienced industry professionals.
+                    Participants will work in teams of four to produce a website
+                    showcase of project deliverables with the guidance of
+                    industry mentors.
                   </p>
                 </div>
               </div>
@@ -244,65 +297,67 @@ class Main extends React.Component {
             </div>
           </div>
 
-          <div className="gradient gradientTransition" ref={(applyEl) => {this.applyEl = applyEl}}>
+          <div
+            className="gradient gradientTransition"
+            ref={applyEl => {
+              this.applyEl = applyEl;
+            }}
+          >
             <span></span>
           </div>
 
-        {/* Showcase Section */}
-        <div>
-          <div className="who" ref={(whoEl) => {this.whoEl = whoEl}}>
-            <h2 style={{ marginBottom: spacer2 }}>Showcase</h2>
-              <div style={{ marginBottom: spacer2}}className="topic-title">Designing for the Voter Experience</div>
-              <Container>
-                <Row>
-                  <Col xs={12} sm={6} md={4}>
-                    <Showcase/>
-                  </Col>
-                  <Col xs={12} sm={6} md={4}>
-                    <Showcase/>
-                  </Col>
-                  <Col xs={12} sm={6} md={4}>
-                    <Showcase/>
-                  </Col>
-                </Row>
-              </Container>
-
-              <div style={{ marginBottom: spacer2}}className="topic-title">Designing for Small Business Recovery</div>
-              <Container>
-                <Row>
-                  <Col xs={12} sm={6} md={4}>
-                    <Showcase/>
-                  </Col>
-                  <Col xs={12} sm={6} md={4}>
-                    <Showcase/>
-                  </Col>
-                </Row>
-              </Container>
+          {/* Showcase Section */}
+          <div>
+            <Row>
+              <Col>
+              Hello</Col>
+            </Row>
           </div>
-        </div>
 
-        {/* Meet The Level Uppers */}
-        <div id="meetTitle" className="meetTitle" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
+          {/* Meet The Level Uppers */}
+          <div
+            id="meetTitle"
+            className="meetTitle"
+            ref={thankYouEl => {
+              this.thankYouEl = thankYouEl;
+            }}
+          >
             <div className="meetTitle">
               <h2>Meet the Level Uppers</h2>
             </div>
           </div>
 
-        {/* Team Snapshot */}
-        <div className="who" ref={(whoEl) => {this.whoEl = whoEl}}>
-              <Container>
-                <Row>
-                  <div>
-                    <img className="showcase-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/F1_light_blue_flag.svg/2000px-F1_light_blue_flag.svg.png" alt="" />
-                    <h2 className="team-name">Vooglers</h2>
-                    <p className="team-members">Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
-                  </div>
-                </Row>
-              </Container>
+          {/* Team Snapshot */}
+          <div
+            className="who"
+            ref={whoEl => {
+              this.whoEl = whoEl;
+            }}
+          >
+            <Container>
+              <Row>
+                <div>
+                  <img
+                    className="showcase-img"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/F1_light_blue_flag.svg/2000px-F1_light_blue_flag.svg.png"
+                    alt=""
+                  />
+                  <h2 className="team-name">Vooglers</h2>
+                  <p className="team-members">
+                    Diana Chong, Nicolle Lo, Juna Kim, Staci Lin
+                  </p>
+                </div>
+              </Row>
+            </Container>
           </div>
-      
 
-          <div id="thankYou" className="thankYou" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
+          <div
+            id="thankYou"
+            className="thankYou"
+            ref={thankYouEl => {
+              this.thankYouEl = thankYouEl;
+            }}
+          >
             <div className="overviewTitle">
               <h2>Thank you</h2>
             </div>
@@ -330,17 +385,19 @@ class Main extends React.Component {
                 Made with
                 <img src={require("./images/heart.svg")} alt="Love" />
               </span>
-              <img src={require("./images/designco-ellipse.svg")} alt="Design Co" />
+              <img
+                src={require("./images/designco-ellipse.svg")}
+                alt="Design Co"
+              />
             </p>
-            
-            <a 
-              id="email" 
-              href="mailto:hello@ucsddesign.co">hello@ucsddesign.co
+
+            <a id="email" href="mailto:hello@ucsddesign.co">
+              hello@ucsddesign.co
             </a>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
