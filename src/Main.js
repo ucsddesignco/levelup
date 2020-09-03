@@ -294,8 +294,8 @@ class Main extends React.Component {
                 <Row>
                   <div>
                     <img className="showcase-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/F1_light_blue_flag.svg/2000px-F1_light_blue_flag.svg.png" alt="" />
-                    <p className="team-members">Vooglers</p>
-                    <h2 className="team-name">Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</h2>
+                    <h2 className="team-name">Vooglers</h2>
+                    <p className="team-members">Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
                   </div>
                 </Row>
               </Container>
