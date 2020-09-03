@@ -678,3 +678,37 @@ ol {
     display: flex;
   }
 }
+
+/*********************/
+
+.team-modal {
+  position: fixed;
+  top: $spacer1;
+  background: black;
+  color: white;
+  left: $spacer1;
+  right: $spacer1;
+  z-index: 10000;
+  overflow-y: scroll;
+  max-height: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  .inner-modal {
+    margin: $spacer3 0;
+  }
+
+  p {
+    margin-top: $spacer1/2;
+  }
+
+  .inner-person {
+    margin-top: $spacer2;
+  }
+
+  h3 {
+    margin-top: $spacer2;
+  }
+}

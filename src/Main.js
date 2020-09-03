@@ -6,6 +6,7 @@ import ReactTestUtils from "react-dom/test-utils";
 import { Container, Row, Col } from "react-grid-system";
 import Showcase from "./components/Showcase";
 import { ShowcaseTeams } from "./components/ShowcaseTeams";
+import Modal from "./components/Modal";
 
 const voterExperience = ShowcaseTeams.slice(0, 3);
 const businessRecovery = ShowcaseTeams.slice(3);
@@ -21,7 +22,8 @@ class Main extends React.Component {
       mobile: false,
       activeIndex: null,
       minimized: true,
-      navPosition: "translateY(75%)"
+      navPosition: "translateY(75%)",
+      showModal: 0
     };
   }
 
@@ -36,6 +38,19 @@ class Main extends React.Component {
     document.removeEventListener("mousemove", this.handleGradient);
     window.removeEventListener("scroll", this.handleScroll, true);
     window.removeEventListener("resize", this.getElementHeights, true);
+  };
+
+  getModal = value => {
+    console.log(value)
+    this.setState({
+      showModal: value
+    });
+  };
+
+  hideModal = () => {
+    this.setState({
+      showModal: -1
+    });
   };
 
   getElementHeights = () => {
@@ -320,13 +335,18 @@ class Main extends React.Component {
               <Row>
                 {voterExperience.map((team, index) => {
                   return (
-                    <Col xs={12} sm={6} md={4}>
-                      <Showcase
-                        image={team.image_path}
-                        name={team.team_name}
-                        members={team.team_members}
-                      />
-                    </Col>
+                    <>
+                      <Col xs={12} sm={6} md={4}>
+                        <div onClick = {()=>{this.getModal(index)}}>
+                        <Showcase
+                          image={team.image_path}
+                          name={team.team_name}
+                          members={team.team_members}
+                          
+                        /></div>
+                      </Col>
+                      <Modal show = {this.state.showModal === index} onHide = {()=>{this.hideModal()}} index = {index} />
+                    </>
                   );
                 })}
               </Row>
