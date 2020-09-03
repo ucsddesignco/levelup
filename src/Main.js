@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import QA from './components/QA';
 import { spacer2, spacer3 } from './constants';
 import ReactTestUtils from 'react-dom/test-utils';
+import {Container, Row, Col} from 'react-grid-system';
 
 
 class Main extends React.Component {
@@ -247,6 +248,7 @@ class Main extends React.Component {
           </div>
 
         {/* Showcase Section */}
+        
 
 
         {/* Meet The Level Uppers */}
@@ -256,22 +258,50 @@ class Main extends React.Component {
             </div>
           </div>
 
-        {/* Team Photos */}
-        <div className="row">
-            <div className="column">
-              <p>Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
-              <h2>Group 1</h2>
-            </div>
-            <div className="column">
-              <p>Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
-              <h2>Group 2</h2>
-            </div>
-            <div className="column">
-              <p>Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
-              <h2>Group 3</h2>
-            </div>
+        {/* Showcase Items */}
+        <h2>Showcase</h2>
+
+        <div>
+          <div className="topic-title">Designing for the Voter Experience</div>
+          <Container>
+            <Row>
+              <Col xs={12} sm={6} md={4}>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlgve_JRdqW7naUkGL_T6ZgLkO1tjNzL9KWQ&usqp=CAU" alt="" />
+                <p className="members">Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
+                <h2 className="team-name">Vooglers</h2>
+              </Col>
+              <Col xs={12} sm={6} md={4}>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlgve_JRdqW7naUkGL_T6ZgLkO1tjNzL9KWQ&usqp=CAU" alt="" />
+                <p className="members">Erin Griggs, Olufisayo Osilaja, Yi Cai, Megan Tan</p>
+                <h2 className="team-name">Valiant Voters</h2>
+              </Col>
+              <Col xs={12} sm={6} md={4}>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlgve_JRdqW7naUkGL_T6ZgLkO1tjNzL9KWQ&usqp=CAU" alt="" />
+                <p className="members">RJ Narvasa, Ria Thompson, Emily Tam, Samantha Cheung</p>
+                <h2 className="team-name">Kids NextStore</h2>
+              </Col>
+            </Row>
+          </Container>
         </div>
 
+
+        <div>
+          <div className="topic-title">Designing for the Small Business Recovery</div>
+          <Container>
+            <Row>
+              <Col xs={12} sm={6} md={4}>
+                <a href="https://www.notion.so/Team-Vooglers-Case-Study-7af3d021b26243fbac5aa57514bd8525" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlgve_JRdqW7naUkGL_T6ZgLkO1tjNzL9KWQ&usqp=CAU" alt="" /></a>
+                <p className="members">Diana Chong, Nicolle Lo, Juna Kim, Staci Lin</p>
+                <h2 className="team-name">Vooglers</h2>
+              </Col>
+              <Col xs={12} sm={6} md={4}>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlgve_JRdqW7naUkGL_T6ZgLkO1tjNzL9KWQ&usqp=CAU" alt="" />
+                <p className="members">Erin Griggs, Olufisayo Osilaja, Yi Cai, Megan Tan</p>
+                <h2 className="team-name">Valiant Voters</h2>
+              </Col>
+            </Row>
+          </Container>
+        </div>
 
           <div id="thankYou" className="thankYou" ref={(thankYouEl) => {this.thankYouEl = thankYouEl}}>
             <div className="overviewTitle">
