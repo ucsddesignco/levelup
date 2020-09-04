@@ -166,7 +166,7 @@ html {
   position: fixed;
   z-index: 3;
   right: 5rem;
-  bottom: 2rem;
+  bottom: 0;
   width: 40rem;
   height: auto;
   border: 1px solid black;
@@ -714,6 +714,7 @@ ol {
   }
 
   .case-study-button {
+    margin-left: auto;
     transition: 0.4s all;
     &:hover {
       transform: scale(0.9);

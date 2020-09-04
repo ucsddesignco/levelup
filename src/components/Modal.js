@@ -25,8 +25,8 @@ export default class Modal extends React.Component {
                     className="back-arrow"
                   />
                 </Col>
-                <Col xs={5} md={9}></Col>
-                <Col xs={5} md={2}>
+                <Col xs={6} md={9}></Col>
+                <Col xs={3} md={2}>
                   <a href={current_team.case_study_link} target="_blank">
                     <img
                       src={require("../images/case_study_btn.png")}
