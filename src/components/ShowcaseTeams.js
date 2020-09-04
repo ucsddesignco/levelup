@@ -50,7 +50,7 @@ export const ShowcaseTeams = [
       "VoteKit is an educational toolkit packed with personalized lessons about local, statewide, and federal candidates and propositions to help youth become more politically informed. These lessons assist users in making confident voting decisions and give users the chance to quickly revisit their voting preferences when filling out their ballot.",
     case_study_link:
       "https://www.notion.so/Valiant-Voters-VoteKit-c515de97d8884c00a5597750aa147ead",
-      team: [
+    team: [
       {
         member_name: "Erin Griggs",
         member_image: require("../images/valiantvoters/eringriggs.png"),
@@ -86,49 +86,6 @@ export const ShowcaseTeams = [
     ]
   },
   {
-    team_name: "Big Design Energy",
-    team_members: "Austin Roddick, Julie Han, SaraMei Wang, Isabelle Pan",
-    image_path: require("../images/bigdesignenergy.jpg"),
-    description:
-      "As young, college-age adults, we noticed that voters in our generation face unique challenges to discussing politics in a healthy, constructive manner. To address this, we decided to create an app that allows users to engage in meaningful, facilitated, and anonymous conversations about a variety of political topics. Through our design work, we hope to create an experience that engages the voting youth and normalizes civilized political discourse.",
-    case_study_link:
-      "https://www.notion.so/LevelUp-Team-5-Case-Study-6fcb11a431184a2f882f2e6d131b465d",
-      team: [
-        {
-          member_name: "Isabelle Pan",
-          member_image: require("../images/bigdesignenergy/isabellepan.png"),
-          position: "Product Designer, Content Strategist"
-        },
-        {
-          member_name: "Julie Han",
-          member_image: require("../images/bigdesignenergy/juliehan.png"),
-          position: "Product Designer"
-        },
-        {
-          member_name: "Austin Roddick",
-          member_image: require("../images/bigdesignenergy/austinroddick.png"),
-          position: "UX Researcher"
-        },
-        {
-          member_name: "Sara Wang",
-          member_image: require("../images/bigdesignenergy/sarawang.png"),
-          position: "Visual Designer"
-        }
-      ],
-      mentor: [
-        {
-          mentor_name: "Wesley Chan",
-          mentor_image: require("../images/bigdesignenergy/wesleychan.png"),
-          position: "UX Researcher, Google"
-        },
-        {
-          mentor_name: "Ashwin Khurana",
-          mentor_image: require("../images/bigdesignenergy/ashwinkhurana.png"),
-          position: "Design Lead, Intuit"
-        }
-      ]
-  },
-  {
     team_name: "Kids NextStore",
     team_members: "RJ Narvasa, Emily Tam, Ria Thompson, Samantha Cheung",
     image_path: require("../images/kidsnextstore.jpg"),
@@ -136,41 +93,85 @@ export const ShowcaseTeams = [
       "NextStore bridges the gap between individual small business owners experiencing similar challenges. We aim to empower small business owners through community to continue delivering positive impacts to communities all over the world.",
     case_study_link:
       "https://www.figma.com/proto/vaImdfH24TfTrOQ6Fh2LdO/NextStore?node-id=1367%3A11498&scaling=min-zoom",
-      team: [
-        {
-          member_name: "RJ Narvasa",
-          member_image: require("../images/kidsnextstore/rjnarvasa.png"),
-          position: "Product Designer, Content Strategist"
-        },
-        {
-          member_name: "Ria Thompson",
-          member_image: require("../images/kidsnextstore/riathompson.png"),
-          position: "Product Designer"
-        },
-        {
-          member_name: "Emily Tam",
-          member_image: require("../images/kidsnextstore/emilytam.png"),
-          position: "UX Researcher"
-        },
-        {
-          member_name: "Samantha Cheung",
-          member_image: require("../images/kidsnextstore/samanthacheung.png"),
-          position: "Visual Designer"
-        }
-      ],
-      mentor: [
-        {
-          mentor_name: "Peter Barnaba",
-          mentor_image: require("../images/kidsnextstore/peterbarnaba.png"),
-          position: "Brand Designer, Figma"
-        },
-        {
-          mentor_name: "Paula Le",
-          mentor_image: require("../images/kidsnextstore/paulale.png"),
-          position: "Interaction Designer, Google"
-        }
-      ]
+    team: [
+      {
+        member_name: "RJ Narvasa",
+        member_image: require("../images/kidsnextstore/rjnarvasa.png"),
+        position: "Product Designer, Content Strategist"
+      },
+      {
+        member_name: "Ria Thompson",
+        member_image: require("../images/kidsnextstore/riathompson.png"),
+        position: "Product Designer"
+      },
+      {
+        member_name: "Emily Tam",
+        member_image: require("../images/kidsnextstore/emilytam.png"),
+        position: "UX Researcher"
+      },
+      {
+        member_name: "Samantha Cheung",
+        member_image: require("../images/kidsnextstore/samanthacheung.png"),
+        position: "Visual Designer"
+      }
+    ],
+    mentor: [
+      {
+        mentor_name: "Peter Barnaba",
+        mentor_image: require("../images/kidsnextstore/peterbarnaba.png"),
+        position: "Brand Designer, Figma"
+      },
+      {
+        mentor_name: "Paula Le",
+        mentor_image: require("../images/kidsnextstore/paulale.png"),
+        position: "Interaction Designer, Google"
+      }
+    ]
   },
+  {
+    team_name: "Big Design Energy",
+    team_members: "Austin Roddick, Julie Han, SaraMei Wang, Isabelle Pan",
+    image_path: require("../images/bigdesignenergy.jpg"),
+    description:
+      "As young, college-age adults, we noticed that voters in our generation face unique challenges to discussing politics in a healthy, constructive manner. To address this, we decided to create an app that allows users to engage in meaningful, facilitated, and anonymous conversations about a variety of political topics. Through our design work, we hope to create an experience that engages the voting youth and normalizes civilized political discourse.",
+    case_study_link:
+      "https://www.notion.so/LevelUp-Team-5-Case-Study-6fcb11a431184a2f882f2e6d131b465d",
+    team: [
+      {
+        member_name: "Isabelle Pan",
+        member_image: require("../images/bigdesignenergy/isabellepan.png"),
+        position: "Product Designer, Content Strategist"
+      },
+      {
+        member_name: "Julie Han",
+        member_image: require("../images/bigdesignenergy/juliehan.png"),
+        position: "Product Designer"
+      },
+      {
+        member_name: "Austin Roddick",
+        member_image: require("../images/bigdesignenergy/austinroddick.png"),
+        position: "UX Researcher"
+      },
+      {
+        member_name: "Sara Wang",
+        member_image: require("../images/bigdesignenergy/sarawang.png"),
+        position: "Visual Designer"
+      }
+    ],
+    mentor: [
+      {
+        mentor_name: "Wesley Chan",
+        mentor_image: require("../images/bigdesignenergy/wesleychan.png"),
+        position: "UX Researcher, Google"
+      },
+      {
+        mentor_name: "Ashwin Khurana",
+        mentor_image: require("../images/bigdesignenergy/ashwinkhurana.png"),
+        position: "Design Lead, Intuit"
+      }
+    ]
+  },
+
   {
     team_name: "4-YELP",
     team_members: "Fiona Wong, Tanish Jindal, Tiffany Liu, Natalie Hun",
@@ -179,39 +180,39 @@ export const ShowcaseTeams = [
       "NextStore bridges the gap between individual small business owners experiencing similar challenges. We aim to empower small business owners through community to continue delivering positive impacts to communities all over the world.",
     case_study_link:
       "https://docs.google.com/document/d/1T3FB7S9o_Apx9cO7blwByKwL-f9wgW6EZrN8euzx88Y/edit",
-      team: [
-        {
-          member_name: "Fiona Wong",
-          member_image: require("../images/4-yelp/fionawong.png"),
-          position: "Product Designer"
-        },
-        {
-          member_name: "Tanish Jindal",
-          member_image: require("../images/4-yelp/tanishjindal.png"),
-          position: "Product Designer"
-        },
-        {
-          member_name: "Natalie Hun",
-          member_image: require("../images/4-yelp/nataliehun.png"),
-          position: "UX Researcher, Content Strategist"
-        },
-        {
-          member_name: "Tiffany Liu",
-          member_image: require("../images/4-yelp/tiffanyliu.png"),
-          position: "Visual Designer"
-        }
-      ],
-      mentor: [
-        {
-          mentor_name: "Marisa Kanemoto",
-          mentor_image: require("../images/4-yelp/marisakanemoto.png"),
-          position: "Product Designer, Workday"
-        },
-        {
-          mentor_name: "Lynn Hao",
-          mentor_image: require("../images/4-yelp/lynnhao.png"),
-          position: "Sr. Experience Designer, Adobe"
-        }
-      ]
+    team: [
+      {
+        member_name: "Fiona Wong",
+        member_image: require("../images/4-yelp/fionawong.png"),
+        position: "Product Designer"
+      },
+      {
+        member_name: "Tanish Jindal",
+        member_image: require("../images/4-yelp/tanishjindal.png"),
+        position: "Product Designer"
+      },
+      {
+        member_name: "Natalie Hun",
+        member_image: require("../images/4-yelp/nataliehun.png"),
+        position: "UX Researcher, Content Strategist"
+      },
+      {
+        member_name: "Tiffany Liu",
+        member_image: require("../images/4-yelp/tiffanyliu.png"),
+        position: "Visual Designer"
+      }
+    ],
+    mentor: [
+      {
+        mentor_name: "Marisa Kanemoto",
+        mentor_image: require("../images/4-yelp/marisakanemoto.png"),
+        position: "Product Designer, Workday"
+      },
+      {
+        mentor_name: "Lynn Hao",
+        mentor_image: require("../images/4-yelp/lynnhao.png"),
+        position: "Sr. Experience Designer, Adobe"
+      }
+    ]
   }
 ];

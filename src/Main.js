@@ -23,7 +23,7 @@ class Main extends React.Component {
       activeIndex: null,
       minimized: true,
       navPosition: "translateY(75%)",
-      showModal: 0
+      showModal: -1
     };
   }
 
@@ -41,7 +41,7 @@ class Main extends React.Component {
   };
 
   getModal = value => {
-    console.log(value)
+    console.log(value);
     this.setState({
       showModal: value
     });
@@ -328,48 +328,72 @@ class Main extends React.Component {
           </div>
 
           {/* Showcase Section */}
-          <div>
-            <Container>
-              <h2 style={{ marginBottom: spacer3 }}>Showcase</h2>
-              <h3>Designing for the Voter Experience</h3>
-              <Row>
-                {voterExperience.map((team, index) => {
-                  return (
-                    <>
-                      <Col xs={12} sm={6} md={4}>
-                        <div onClick = {()=>{this.getModal(index)}}>
+          <div className="showcase" id="showcase">
+            <h2 style={{ marginBottom: spacer3 }}>Showcase</h2>
+            <h3>Designing for the Voter Experience</h3>
+            <Row>
+              {voterExperience.map((team, index) => {
+                return (
+                  <>
+                    <Col xs={12} sm={6} md={4}>
+                      <div
+                        onClick={() => {
+                          this.getModal(index);
+                        }}
+                      >
                         <Showcase
                           image={team.image_path}
                           name={team.team_name}
                           members={team.team_members}
-                          
-                        /></div>
-                      </Col>
-                      <Modal show = {this.state.showModal === index} onHide = {()=>{this.hideModal()}} index = {index} />
-                    </>
-                  );
-                })}
-              </Row>
-              <h3>Designing for Small Business Recovery</h3>
-              <Row>
-                {businessRecovery.map((team, index) => {
-                  return (
-                    <Col xs={12} sm={6} md={4}>
-                      <Showcase
-                        image={team.image_path}
-                        name={team.team_name}
-                        members={team.team_members}
-                      />
+                        />
+                      </div>
                     </Col>
-                  );
-                })}
-              </Row>
-            </Container>
+                    <Modal
+                      show={this.state.showModal === index}
+                      onHide={() => {
+                        this.hideModal();
+                      }}
+                      index={index}
+                    />
+                  </>
+                );
+              })}
+            </Row>
+            <h3>Designing for Small Business Recovery</h3>
+            <Row>
+              {businessRecovery.map((team, idx) => {
+                const index = idx + 3;
+                return (
+                  <>
+                    <Col xs={12} sm={6} md={4}>
+                      <div
+                        onClick={() => {
+                          this.getModal(index);
+                        }}
+                      >
+                        <Showcase
+                          image={team.image_path}
+                          name={team.team_name}
+                          members={team.team_members}
+                        />
+                      </div>
+                    </Col>
+                    <Modal
+                      show={this.state.showModal === index}
+                      onHide={() => {
+                        this.hideModal();
+                      }}
+                      index={index}
+                    />
+                  </>
+                );
+              })}
+            </Row>
           </div>
 
           {/* Meet The Level Uppers */}
           <div
-            id="meetTitle"
+            id="leveluppers"
             className="meetTitle"
             ref={thankYouEl => {
               this.thankYouEl = thankYouEl;
@@ -388,19 +412,7 @@ class Main extends React.Component {
             }}
           >
             <Container>
-              <Row>
-                <div>
-                  <img
-                    className="showcase-img"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/F1_light_blue_flag.svg/2000px-F1_light_blue_flag.svg.png"
-                    alt=""
-                  />
-                  <h2 className="team-name">Vooglers</h2>
-                  <p className="team-members">
-                    Diana Chong, Nicolle Lo, Juna Kim, Staci Lin
-                  </p>
-                </div>
-              </Row>
+              <Row></Row>
             </Container>
           </div>
 

@@ -17,12 +17,31 @@ export default class Modal extends React.Component {
         {this.props.show && (
           <div className="inner-modal">
             <Container>
+              <Row className="top-buttons">
+                <Col xs={1}>
+                  <img
+                    src={require("../images/arrow.svg")}
+                    onClick={this.props.onHide}
+                    className="back-arrow"
+                  />
+                </Col>
+                <Col xs={5} md={9}></Col>
+                <Col xs={5} md={2}>
+                  <a href={current_team.case_study_link} target="_blank">
+                    <img
+                      src={require("../images/case_study_btn.png")}
+                      alt="case-study-button"
+                      className="case-study-button"
+                    />
+                  </a>
+                </Col>
+              </Row>
               <Row align="end">
                 <Col xs={12} md={5}>
-                  <img src={current_team.image_path} />
+                  <img src={current_team.image_path} className="main-img" />
                 </Col>
                 <Col xs={12} md={7}>
-                  <h1>{current_team.team_name}</h1>
+                  <h2>{current_team.team_name}</h2>
                   <p className="description">{current_team.description}</p>
                 </Col>
               </Row>

@@ -416,8 +416,6 @@ html {
 .about {
   padding: 5vw 8vw;
   box-sizing: border-box;
-  border: solid;
-  border-width: 0 1px 1px 0;
   background-color: #000;
   color: #fff;
 
@@ -683,17 +681,43 @@ ol {
 
 .team-modal {
   position: fixed;
-  top: $spacer1;
+  top: 0;
   background: black;
   color: white;
-  left: $spacer1;
-  right: $spacer1;
+  left: 6vw;
+  right: 0;
   z-index: 10000;
   overflow-y: scroll;
   max-height: 100%;
 
   img {
     width: 100%;
+  }
+
+  .description {
+    margin-top: $spacer1;
+  }
+
+  .main-img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
+
+  .back-arrow {
+    width: 30px;
+    transition: 0.4s all;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(0.8);
+    }
+  }
+
+  .case-study-button {
+    transition: 0.4s all;
+    &:hover {
+      transform: scale(0.9);
+    }
   }
 
   .inner-modal {
@@ -709,6 +733,44 @@ ol {
   }
 
   h3 {
+    margin-top: $spacer3;
+  }
+
+  .top-buttons {
+    margin-bottom: $spacer1;
+  }
+}
+
+.showcase {
+  padding: 5vw 8vw;
+
+  h3 {
+    margin: $spacer3 0 $spacer1 0;
+  }
+}
+
+.showcase-div {
+  .showcase-img {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
     margin-top: $spacer2;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    cursor: pointer;
+  }
+
+  .showcase-img:hover {
+    filter: none;
+  }
+
+  .gradient-fill {
+    @extend .gradient;
+    width: 100%;
+    margin-top: -14px;
+    height: 2rem;
+    border: 1px solid black;
+    z-index: 1000;
+    margin-bottom: $spacer2;
   }
 }
