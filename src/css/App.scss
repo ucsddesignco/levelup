@@ -412,6 +412,10 @@ html {
   line-height: 3.5vw;
 }
 
+.carousel .slide {
+  // background: $bg;
+}
+
 /************************* ABOUT ***************************/
 .about {
   padding: 5vw 8vw;
@@ -799,7 +803,7 @@ ol {
   }
 }
 
-.carousel-main{
+.carousel-main {
   width: 100%;
   display: flex;
 }
