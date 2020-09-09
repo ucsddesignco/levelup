@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Carousel } from "react-responsive-carousel";
+import { Row, Col, Container } from "react-grid-system";
 
 const imgMapping = {
   1: require("../images/zoom/zoom_vooglers.png"),
@@ -60,17 +61,36 @@ class ExternalControlledCarousel extends Component {
       <div>
         <div>
           <p>External slide value: {this.state.currentSlide}</p>
-          <button onClick={this.prev}>Prev</button>
-          <button onClick={this.next}>Next</button>
         </div>
-        <Carousel
-          autoPlay={this.state.autoPlay}
-          selectedItem={this.state.currentSlide}
-          onChange={this.updateCurrentSlide}
-          {...this.props}
-        >
-          {baseChildren.props.children}
-        </Carousel>
+
+        <Row align="center" justify="center">
+          <Col xs={1}>
+            <button onClick={this.prev}>Prev</button>
+            <img
+              src={require("../images/zoom/4-yelp_arrow_left.png")}
+              onClick={this.prev}
+            />
+            <p>
+                {this.state.currentSlide === 1 && "hello"}
+            </p>
+          </Col>
+          <Col xs={8}>
+            <Carousel
+              autoPlay={this.state.autoPlay}
+              selectedItem={this.state.currentSlide}
+              onChange={this.updateCurrentSlide}
+              showThumbs={false}
+              showArrows={false}
+              showIndicators={false}
+              {...this.props}
+            >
+              {baseChildren.props.children}
+            </Carousel>
+          </Col>
+          <Col xs={1}>
+            <button onClick={this.next}>Next</button>
+          </Col>
+        </Row>
       </div>
     );
   }
