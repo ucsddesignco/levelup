@@ -11,36 +11,36 @@ export const ShowcaseTeams = [
       {
         member_name: "Diana Chong",
         member_image: require("../images/vooglers/dianachong.png"),
-        position: "Product Designer, Content Strategist"
+        position: "Product Designer, Content Strategist",
       },
       {
         member_name: "Nicolle Lo",
         member_image: require("../images/vooglers/nicollelo.png"),
-        position: "UX Researcher"
+        position: "UX Researcher",
       },
       {
         member_name: "Staci Lin",
         member_image: require("../images/vooglers/stacilin.png"),
-        position: "Product Designer"
+        position: "Product Designer",
       },
       {
         member_name: "Juna Kim",
         member_image: require("../images/vooglers/junakim.png"),
-        position: "Visual Designer"
-      }
+        position: "Visual Designer",
+      },
     ],
     mentor: [
       {
         mentor_name: "Charu Mehra",
         mentor_image: require("../images/vooglers/charumehra.png"),
-        position: "Sr. UX Researcher, UserTesting"
+        position: "Sr. UX Researcher, UserTesting",
       },
       {
         mentor_name: "Garron Engstrom",
         mentor_image: require("../images/vooglers/garronengstrom.png"),
-        position: "Product Designer, Facebook"
-      }
-    ]
+        position: "Product Designer, Facebook",
+      },
+    ],
   },
   {
     team_name: "Valiant Voters",
@@ -54,79 +54,36 @@ export const ShowcaseTeams = [
       {
         member_name: "Erin Griggs",
         member_image: require("../images/valiantvoters/eringriggs.png"),
-        position: "Product Designer, UX Engineer"
+        position: "Product Designer, UX Engineer",
       },
       {
         member_name: "Yi Cai (Ethan)",
         member_image: require("../images/valiantvoters/yicai.png"),
-        position: "Product Designer"
+        position: "Product Designer",
       },
       {
         member_name: "Olufisayo Osilaja",
         member_image: require("../images/valiantvoters/olufisayoosilaja.png"),
-        position: "UX Researcher"
+        position: "UX Researcher",
       },
       {
         member_name: "Megan Tan",
         member_image: require("../images/valiantvoters/megantan.png"),
-        position: "Visual Designer"
-      }
+        position: "Visual Designer",
+      },
     ],
     mentor: [
       {
         mentor_name: "Ophelia Ding",
         mentor_image: require("../images/valiantvoters/opheliading.png"),
-        position: "Product Designer, Wish"
+        position: "Product Designer, Wish",
       },
       {
         mentor_name: "Lily Konings",
         mentor_image: require("../images/valiantvoters/lilykonings.png"),
-        position: "Product Designer, Facebook"
-      }
-    ]
-  },
-  {
-    team_name: "Kids NextStore",
-    team_members: "RJ Narvasa, Emily Tam, Ria Thompson, Samantha Cheung",
-    image_path: require("../images/kidsnextstore.jpg"),
-    description:
-      "NextStore bridges the gap between individual small business owners experiencing similar challenges. We aim to empower small business owners through community to continue delivering positive impacts to communities all over the world.",
-    case_study_link:
-      "https://www.figma.com/proto/vaImdfH24TfTrOQ6Fh2LdO/NextStore?node-id=1367%3A11498&scaling=min-zoom",
-    team: [
-      {
-        member_name: "RJ Narvasa",
-        member_image: require("../images/kidsnextstore/rjnarvasa.png"),
-        position: "Product Designer, Content Strategist"
+        position: "Product Designer, Facebook",
       },
-      {
-        member_name: "Ria Thompson",
-        member_image: require("../images/kidsnextstore/riathompson.png"),
-        position: "Product Designer"
-      },
-      {
-        member_name: "Emily Tam",
-        member_image: require("../images/kidsnextstore/emilytam.png"),
-        position: "UX Researcher"
-      },
-      {
-        member_name: "Samantha Cheung",
-        member_image: require("../images/kidsnextstore/samanthacheung.png"),
-        position: "Visual Designer"
-      }
     ],
-    mentor: [
-      {
-        mentor_name: "Peter Barnaba",
-        mentor_image: require("../images/kidsnextstore/peterbarnaba.png"),
-        position: "Brand Designer, Figma"
-      },
-      {
-        mentor_name: "Paula Le",
-        mentor_image: require("../images/kidsnextstore/paulale.png"),
-        position: "Interaction Designer, Google"
-      }
-    ]
   },
   {
     team_name: "Big Design Energy",
@@ -140,38 +97,80 @@ export const ShowcaseTeams = [
       {
         member_name: "Isabelle Pan",
         member_image: require("../images/bigdesignenergy/isabellepan.png"),
-        position: "Product Designer, Content Strategist"
+        position: "Product Designer, Content Strategist",
       },
       {
         member_name: "Julie Han",
         member_image: require("../images/bigdesignenergy/juliehan.png"),
-        position: "Product Designer"
+        position: "Product Designer",
       },
       {
         member_name: "Austin Roddick",
         member_image: require("../images/bigdesignenergy/austinroddick.png"),
-        position: "UX Researcher"
+        position: "UX Researcher",
       },
       {
         member_name: "Sara Wang",
         member_image: require("../images/bigdesignenergy/sarawang.png"),
-        position: "Visual Designer"
-      }
+        position: "Visual Designer",
+      },
     ],
     mentor: [
       {
         mentor_name: "Wesley Chan",
         mentor_image: require("../images/bigdesignenergy/wesleychan.png"),
-        position: "UX Researcher, Google"
+        position: "UX Researcher, Google",
       },
       {
         mentor_name: "Ashwin Khurana",
         mentor_image: require("../images/bigdesignenergy/ashwinkhurana.png"),
-        position: "Design Lead, Intuit"
-      }
-    ]
+        position: "Design Lead, Intuit",
+      },
+    ],
   },
-
+  {
+    team_name: "Kids NextStore",
+    team_members: "RJ Narvasa, Emily Tam, Ria Thompson, Samantha Cheung",
+    image_path: require("../images/kidsnextstore.jpg"),
+    description:
+      "NextStore bridges the gap between individual small business owners experiencing similar challenges. We aim to empower small business owners through community to continue delivering positive impacts to communities all over the world.",
+    case_study_link:
+      "https://www.figma.com/proto/vaImdfH24TfTrOQ6Fh2LdO/NextStore?node-id=1367%3A11498&scaling=min-zoom",
+    team: [
+      {
+        member_name: "RJ Narvasa",
+        member_image: require("../images/kidsnextstore/rjnarvasa.png"),
+        position: "Product Designer, Content Strategist",
+      },
+      {
+        member_name: "Ria Thompson",
+        member_image: require("../images/kidsnextstore/riathompson.png"),
+        position: "Product Designer",
+      },
+      {
+        member_name: "Emily Tam",
+        member_image: require("../images/kidsnextstore/emilytam.png"),
+        position: "UX Researcher",
+      },
+      {
+        member_name: "Samantha Cheung",
+        member_image: require("../images/kidsnextstore/samanthacheung.png"),
+        position: "Visual Designer",
+      },
+    ],
+    mentor: [
+      {
+        mentor_name: "Peter Barnaba",
+        mentor_image: require("../images/kidsnextstore/peterbarnaba.png"),
+        position: "Brand Designer, Figma",
+      },
+      {
+        mentor_name: "Paula Le",
+        mentor_image: require("../images/kidsnextstore/paulale.png"),
+        position: "Interaction Designer, Google",
+      },
+    ],
+  },
   {
     team_name: "4-YELP",
     team_members: "Fiona Wong, Tanish Jindal, Tiffany Liu, Natalie Hun",
@@ -184,35 +183,35 @@ export const ShowcaseTeams = [
       {
         member_name: "Fiona Wong",
         member_image: require("../images/4-yelp/fionawong.png"),
-        position: "Product Designer"
+        position: "Product Designer",
       },
       {
         member_name: "Tanish Jindal",
         member_image: require("../images/4-yelp/tanishjindal.png"),
-        position: "Product Designer"
+        position: "Product Designer",
       },
       {
         member_name: "Natalie Hun",
         member_image: require("../images/4-yelp/nataliehun.png"),
-        position: "UX Researcher, Content Strategist"
+        position: "UX Researcher, Content Strategist",
       },
       {
         member_name: "Tiffany Liu",
         member_image: require("../images/4-yelp/tiffanyliu.png"),
-        position: "Visual Designer"
-      }
+        position: "Visual Designer",
+      },
     ],
     mentor: [
       {
         mentor_name: "Marisa Kanemoto",
         mentor_image: require("../images/4-yelp/marisakanemoto.png"),
-        position: "Product Designer, Workday"
+        position: "Product Designer, Workday",
       },
       {
         mentor_name: "Lynn Hao",
         mentor_image: require("../images/4-yelp/lynnhao.png"),
-        position: "Sr. Experience Designer, Adobe"
-      }
-    ]
-  }
+        position: "Sr. Experience Designer, Adobe",
+      },
+    ],
+  },
 ];
