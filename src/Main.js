@@ -7,6 +7,8 @@ import { Container, Row, Col } from "react-grid-system";
 import Showcase from "./components/Showcase";
 import { ShowcaseTeams } from "./components/ShowcaseTeams";
 import Modal from "./components/Modal";
+import ExternalControlledCarousel from "./components/Carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const voterExperience = ShowcaseTeams.slice(0, 3);
 const businessRecovery = ShowcaseTeams.slice(3);
@@ -411,9 +413,9 @@ class Main extends React.Component {
               this.whoEl = whoEl;
             }}
           >
-            <Container>
-              <Row></Row>
-            </Container>
+            <Row>
+              <ExternalControlledCarousel />
+            </Row>
           </div>
 
           <div
