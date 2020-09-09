@@ -77,39 +77,37 @@ class ExternalControlledCarousel extends Component {
 
   render() {
     return (
-      <div>
-        <Container>
-          <Row align="center" justify="center">
-            <Col xs={1}>
-              <img
-                src={prevArrows[this.state.currentSlide]}
-                onClick={this.prev}
-                className="nav-arrows"
-              />
-            </Col>
-            <Col xs={10} sm={8}>
-              <Carousel
-                autoPlay={this.state.autoPlay}
-                selectedItem={this.state.currentSlide}
-                onChange={this.updateCurrentSlide}
-                showThumbs={false}
-                showArrows={false}
-                showIndicators={false}
-                showStatus={false}
-                {...this.props}
-              >
-                {baseChildren.props.children}
-              </Carousel>
-            </Col>
-            <Col xs={1}>
-              <img
-                src={nextArrows[this.state.currentSlide]}
-                onClick={this.next}
-                className="nav-arrows"
-              />
-            </Col>
-          </Row>
-        </Container>
+      <div style={{ width: "100%" }}>
+        <Row align="center" justify="center">
+          <Col xs={1}>
+            <img
+              src={prevArrows[this.state.currentSlide]}
+              onClick={this.prev}
+              className="nav-arrows"
+            />
+          </Col>
+          <Col xs={10} sm={8}>
+            <Carousel
+              autoPlay={this.state.autoPlay}
+              selectedItem={this.state.currentSlide}
+              onChange={this.updateCurrentSlide}
+              showThumbs={false}
+              showArrows={false}
+              showIndicators={false}
+              showStatus={false}
+              {...this.props}
+            >
+              {baseChildren.props.children}
+            </Carousel>
+          </Col>
+          <Col xs={1}>
+            <img
+              src={nextArrows[this.state.currentSlide]}
+              onClick={this.next}
+              className="nav-arrows"
+            />
+          </Col>
+        </Row>
       </div>
     );
   }
