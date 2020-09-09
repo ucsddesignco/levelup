@@ -434,8 +434,6 @@ html {
 /************************* WHO ***************************/
 .who {
   padding: 5vw 8vw;
-  border: solid;
-  border-width: 0 1px 1px 0;
 }
 
 /************************* RESPONSIBILITY ***************************/
@@ -773,5 +771,30 @@ ol {
     border: 1px solid black;
     z-index: 1000;
     margin-bottom: $spacer2;
+  }
+}
+
+.nav-arrows {
+  width: 100%;
+  cursor: pointer;
+  transition: 0.5s all;
+  margin-bottom: 100px;
+
+  &:hover {
+    transform: scale(0.9);
+  }
+}
+
+.carousel-team {
+  background: $bg;
+  text-align: left;
+
+  img {
+    width: 100%;
+  }
+
+  h2 {
+    padding-top: $spacer2;
+    margin-bottom: $spacer1/2;
   }
 }

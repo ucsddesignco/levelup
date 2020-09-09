@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { Row, Col, Container } from "react-grid-system";
+import { ShowcaseTeams } from "./ShowcaseTeams";
 
 const imgMapping = {
   1: require("../images/zoom/zoom_vooglers.png"),
@@ -10,9 +11,27 @@ const imgMapping = {
   5: require("../images/zoom/zoom_4-yelp.png")
 };
 
+const prevArrows = [
+  require("../images/zoom/vooglers_arrow_left.png"),
+  require("../images/zoom/valiantvoters_arrow_left.png"),
+  require("../images/zoom/kidsnextstore_arrow_left.png"),
+  require("../images/zoom/bigdesignenergy_arrow_left.png"),
+  require("../images/zoom/4-yelp_arrow_left.png")
+];
+
+const nextArrows = [
+  require("../images/zoom/vooglers_arrow_right.png"),
+  require("../images/zoom/valiantvoters_arrow_right.png"),
+  require("../images/zoom/kidsnextstore_arrow_right.png"),
+  require("../images/zoom/bigdesignenergy_arrow_right.png"),
+  require("../images/zoom/4-yelp_arrow_right.png")
+];
+
 const createCarouselItemImage = (index, options) => (
-  <div key={index}>
+  <div key={index} className="carousel-team">
     <img src={imgMapping[index]} />
+    <h2>{ShowcaseTeams[index - 1].team_name}</h2>
+    <h6>{ShowcaseTeams[index - 1].team_members}</h6>
   </div>
 );
 
@@ -59,38 +78,38 @@ class ExternalControlledCarousel extends Component {
   render() {
     return (
       <div>
-        <div>
-          <p>External slide value: {this.state.currentSlide}</p>
-        </div>
-
-        <Row align="center" justify="center">
-          <Col xs={1}>
-            <button onClick={this.prev}>Prev</button>
-            <img
-              src={require("../images/zoom/4-yelp_arrow_left.png")}
-              onClick={this.prev}
-            />
-            <p>
-                {this.state.currentSlide === 1 && "hello"}
-            </p>
-          </Col>
-          <Col xs={8}>
-            <Carousel
-              autoPlay={this.state.autoPlay}
-              selectedItem={this.state.currentSlide}
-              onChange={this.updateCurrentSlide}
-              showThumbs={false}
-              showArrows={false}
-              showIndicators={false}
-              {...this.props}
-            >
-              {baseChildren.props.children}
-            </Carousel>
-          </Col>
-          <Col xs={1}>
-            <button onClick={this.next}>Next</button>
-          </Col>
-        </Row>
+        <Container>
+          <Row align="center" justify="center">
+            <Col xs={1}>
+              <img
+                src={prevArrows[this.state.currentSlide]}
+                onClick={this.prev}
+                className="nav-arrows"
+              />
+            </Col>
+            <Col xs={10} sm={8}>
+              <Carousel
+                autoPlay={this.state.autoPlay}
+                selectedItem={this.state.currentSlide}
+                onChange={this.updateCurrentSlide}
+                showThumbs={false}
+                showArrows={false}
+                showIndicators={false}
+                showStatus={false}
+                {...this.props}
+              >
+                {baseChildren.props.children}
+              </Carousel>
+            </Col>
+            <Col xs={1}>
+              <img
+                src={nextArrows[this.state.currentSlide]}
+                onClick={this.next}
+                className="nav-arrows"
+              />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
