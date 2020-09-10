@@ -19,11 +19,13 @@ body {
   cursor: auto;
 }
 
-.full-screen-menu {
-  background-color: $bg;
-  height: 100%;
-  width: 100%;
-  left: 0px;
+@media only (max-width: 550px) {
+  .full-screen-menu {
+    background-color: $bg;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+  }
 }
 
 .sidebar {
