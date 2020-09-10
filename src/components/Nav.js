@@ -90,7 +90,7 @@ class Nav extends React.Component {
             </a>
           </div>
 
-          <div className="gradient gradientTransition">
+          <div className="gradient gradientTransition removed-border-bottom">
             <span>Meet The Level Uppers</span>
             <a
               href="#leveluppers"
