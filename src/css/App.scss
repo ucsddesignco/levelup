@@ -19,7 +19,7 @@ body {
   cursor: auto;
 }
 
-@media only (max-width: 550px) {
+@media (max-width: 550px) {
   .full-screen-menu {
     background-color: $bg;
     height: 100%;
