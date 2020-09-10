@@ -40,7 +40,7 @@ class Nav extends React.Component {
         style={{
           transform: this.props.mobile
             ? "translate(0)"
-            : `${this.props.navPosition}`
+            : `${this.props.navPosition}`,
         }}
       >
         <div
@@ -67,37 +67,39 @@ class Nav extends React.Component {
           />
         </div>
 
-        <div className="gradient gradientTransition">
-          <span>About</span>
-          <a
-            href="#about"
-            onClick={() => this.props.setActiveIndex(0)}
-            className={this.props.activeIndex === 0 ? "active" : ""}
-          >
-            &nbsp;
-          </a>
-        </div>
+        <div className="full-screen-menu">
+          <div className="gradient gradientTransition websitecontent-title">
+            <span>About</span>
+            <a
+              href="#about"
+              onClick={() => this.props.setActiveIndex(0)}
+              className={this.props.activeIndex === 0 ? "active" : ""}
+            >
+              &nbsp;
+            </a>
+          </div>
 
-        <div className="gradient gradientTransition">
-          <span>Showcase</span>
-          <a
-            href="#showcase"
-            onClick={() => this.props.setActiveIndex(1)}
-            className={this.props.activeIndex === 1 ? "active" : ""}
-          >
-            &nbsp;
-          </a>
-        </div>
+          <div className="gradient gradientTransition">
+            <span>Showcase</span>
+            <a
+              href="#showcase"
+              onClick={() => this.props.setActiveIndex(1)}
+              className={this.props.activeIndex === 1 ? "active" : ""}
+            >
+              &nbsp;
+            </a>
+          </div>
 
-        <div className="gradient gradientTransition">
-          <span>Meet The Level Uppers</span>
-          <a
-            href="#leveluppers"
-            onClick={() => this.props.setActiveIndex(2)}
-            className={this.props.activeIndex === 2 ? "active" : ""}
-          >
-            &nbsp;
-          </a>
+          <div className="gradient gradientTransition">
+            <span>Meet The Level Uppers</span>
+            <a
+              href="#leveluppers"
+              onClick={() => this.props.setActiveIndex(2)}
+              className={this.props.activeIndex === 2 ? "active" : ""}
+            >
+              &nbsp;
+            </a>
+          </div>
         </div>
 
         {/* <div className="gradient gradientTransition">

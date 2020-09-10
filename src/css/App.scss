@@ -19,6 +19,13 @@ body {
   cursor: auto;
 }
 
+.full-screen-menu {
+  background-color: $bg;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+}
+
 .sidebar {
   cursor: auto;
 }
@@ -179,11 +186,15 @@ html {
     opacity: 1;
   }
 
+  .websitecontent-title {
+    border-top: 1px solid black;
+  }
+
   .gradientTransition {
     text-align: inherit;
     height: calc(1.8rem + 5rem);
     line-height: calc(1.8rem + 5rem);
-    border-top: 1px solid black;
+    border-bottom: 1px solid black; //changed
     overflow: hidden;
 
     span {
@@ -413,7 +424,7 @@ html {
 }
 
 .carousel .slide {
-  background: $bg;
+  background: #e5e5e5 !important;
 }
 
 /************************* ABOUT ***************************/
@@ -718,6 +729,9 @@ ol {
   .case-study-button {
     margin-left: auto;
     transition: 0.4s all;
+    width: 100% !important;
+    height: 100% !important;
+
     &:hover {
       transform: scale(0.9);
     }
