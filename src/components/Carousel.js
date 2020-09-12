@@ -48,14 +48,19 @@ class ExternalControlledCarousel extends Component {
   }
 
   next = () => {
+    let slide_to_set = (this.state.currentSlide + 1) % 5
     this.setState(state => ({
-      currentSlide: state.currentSlide + 1
+      currentSlide: slide_to_set
     }));
   };
 
   prev = () => {
+    let slide_to_set = this.state.currentSlide - 1
+    if (this.state.currentSlide == -1){
+      slide_to_set = 5
+    }
     this.setState(state => ({
-      currentSlide: state.currentSlide - 1
+      currentSlide: slide_to_set
     }));
   };
 

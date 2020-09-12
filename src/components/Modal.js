@@ -42,6 +42,7 @@ export default class Modal extends React.Component {
                 </Col>
                 <Col xs={12} md={7}>
                   <h2>{current_team.team_name}</h2>
+                  <p className="superlative">{current_team.superlatives}</p>
                   <p className="description">{current_team.description}</p>
                 </Col>
               </Row>
