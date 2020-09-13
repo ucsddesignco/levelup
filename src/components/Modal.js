@@ -41,7 +41,9 @@ export default class Modal extends React.Component {
                   <img src={current_team.image_path} className="main-img" />
                 </Col>
                 <Col xs={12} md={7}>
-                  <h2>{current_team.team_name}</h2>
+                  <h2 className="superlative-margin">
+                    {current_team.team_name}
+                  </h2>
                   <p className="superlative">{current_team.superlatives}</p>
                   <p className="description">{current_team.description}</p>
                 </Col>

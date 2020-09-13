@@ -695,12 +695,16 @@ ol {
   img {
     width: 100%;
   }
-  .superlative{
-    padding : 0.5rem 1rem;
+  .superlative {
+    padding: 0.5rem 1rem;
     display: inline;
     font-size: 2.4rem;
     background: white;
-    color : black;
+    color: black;
+  }
+
+  .superlative-margin {
+    margin-bottom: 1.3rem;
   }
 
   .description {
