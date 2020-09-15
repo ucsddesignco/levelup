@@ -3,6 +3,7 @@ export const ShowcaseTeams = [
     team_name: "Vooglers",
     team_members: "Diana Chong, Nicolle Lo, Juna Kim, Staci Lin",
     image_path: require("../images/vooglers.jpg"),
+    superlatives: "You Deserve a TED Talk for That Award",
     description:
       "The Vooglers wanted to design a voter’s experience solution that integrates seamlessly into existing apps on the market, because they wanted a frictionless way to increase voter turnout and get more people involved in prevalent issues. Ultimately, they hope their solution inspires tech companies to utilize their platforms to encourage users to participate and share their voice in the voting process.",
     case_study_link:
@@ -46,6 +47,7 @@ export const ShowcaseTeams = [
     team_name: "Valiant Voters",
     team_members: "Fisayo Osilaja, Megan Tan, Yi Cai, Erin Griggs",
     image_path: require("../images/valiantvoters.jpg"),
+    superlatives: "Redefining the System Award",
     description:
       "VoteKit is an educational toolkit packed with personalized lessons about local, statewide, and federal candidates and propositions to help youth become more politically informed. These lessons assist users in making confident voting decisions and give users the chance to quickly revisit their voting preferences when filling out their ballot.",
     case_study_link:
@@ -89,6 +91,7 @@ export const ShowcaseTeams = [
     team_name: "Big Design Energy",
     team_members: "Austin Roddick, Julie Han, SaraMei Wang, Isabelle Pan",
     image_path: require("../images/bigdesignenergy.jpg"),
+    superlatives: "Principled Phenoms Award",
     description:
       "As young, college-age adults, we noticed that voters in our generation face unique challenges to discussing politics in a healthy, constructive manner. To address this, we decided to create an app that allows users to engage in meaningful, facilitated, and anonymous conversations about a variety of political topics. Through our design work, we hope to create an experience that engages the voting youth and normalizes civilized political discourse.",
     case_study_link:
@@ -132,6 +135,7 @@ export const ShowcaseTeams = [
     team_name: "Kids NextStore",
     team_members: "RJ Narvasa, Emily Tam, Ria Thompson, Samantha Cheung",
     image_path: require("../images/kidsnextstore.jpg"),
+    superlatives: "For the People, By the People Award",
     description:
       "NextStore bridges the gap between individual small business owners experiencing similar challenges. We aim to empower small business owners through community to continue delivering positive impacts to communities all over the world.",
     case_study_link:
@@ -175,6 +179,7 @@ export const ShowcaseTeams = [
     team_name: "4-YELP",
     team_members: "Fiona Wong, Tanish Jindal, Tiffany Liu, Natalie Hun",
     image_path: require("../images/4-yelp.jpg"),
+    superlatives: "Thoughtful Adoption Strategy Award",
     description:
       "The Yelp “appointment” add-on feature is aimed at streamlining the process of creating an online presence for small businesses in personal services such as hair and nail salons. Now more than ever, the booking appointment feature is an add on capable of bridging the distrust and uncertainties between customers and small businesses during COVID-19.",
     case_study_link:
