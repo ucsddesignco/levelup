@@ -6,9 +6,9 @@ import { ShowcaseTeams } from "./ShowcaseTeams";
 const imgMapping = {
   1: require("../images/zoom/zoom_vooglers.png"),
   2: require("../images/zoom/zoom_valiantvoters.png"),
-  3: require("../images/zoom/zoom_kidsnextstore.png"),
-  4: require("../images/zoom/zoom_bigdesignenergy.png"),
-  5: require("../images/zoom/zoom_4-yelp.png")
+  3: require("../images/zoom/zoom_bigdesignenergy.png"),
+  4: require("../images/zoom/zoom_kidsnextstore.png"),
+  5: require("../images/zoom/zoom_4-yelp.png"),
 };
 
 const prevArrows = [
@@ -16,7 +16,7 @@ const prevArrows = [
   require("../images/zoom/valiantvoters_arrow_left.png"),
   require("../images/zoom/kidsnextstore_arrow_left.png"),
   require("../images/zoom/bigdesignenergy_arrow_left.png"),
-  require("../images/zoom/4-yelp_arrow_left.png")
+  require("../images/zoom/4-yelp_arrow_left.png"),
 ];
 
 const nextArrows = [
@@ -24,7 +24,7 @@ const nextArrows = [
   require("../images/zoom/valiantvoters_arrow_right.png"),
   require("../images/zoom/kidsnextstore_arrow_right.png"),
   require("../images/zoom/bigdesignenergy_arrow_right.png"),
-  require("../images/zoom/4-yelp_arrow_right.png")
+  require("../images/zoom/4-yelp_arrow_right.png"),
 ];
 
 const createCarouselItemImage = (index, options) => (
@@ -43,34 +43,34 @@ class ExternalControlledCarousel extends Component {
 
     this.state = {
       currentSlide: 0,
-      autoPlay: false
+      autoPlay: false,
     };
   }
 
   next = () => {
-    this.setState(state => ({
-      currentSlide: state.currentSlide + 1
+    this.setState((state) => ({
+      currentSlide: state.currentSlide + 1,
     }));
   };
 
   prev = () => {
-    this.setState(state => ({
-      currentSlide: state.currentSlide - 1
+    this.setState((state) => ({
+      currentSlide: state.currentSlide - 1,
     }));
   };
 
   changeAutoPlay = () => {
-    this.setState(state => ({
-      autoPlay: !state.autoPlay
+    this.setState((state) => ({
+      autoPlay: !state.autoPlay,
     }));
   };
 
-  updateCurrentSlide = index => {
+  updateCurrentSlide = (index) => {
     const { currentSlide } = this.state;
 
     if (currentSlide !== index) {
       this.setState({
-        currentSlide: index
+        currentSlide: index,
       });
     }
   };
