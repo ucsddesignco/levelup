@@ -176,7 +176,7 @@ export const ShowcaseTeams = [
     team_members: "Fiona Wong, Tanish Jindal, Tiffany Liu, Natalie Hun",
     image_path: require("../images/4-yelp.jpg"),
     description:
-      "NextStore bridges the gap between individual small business owners experiencing similar challenges. We aim to empower small business owners through community to continue delivering positive impacts to communities all over the world.",
+      "The Yelp “appointment” add-on feature is aimed at streamlining the process of creating an online presence for small businesses in personal services such as hair and nail salons. Now more than ever, the booking appointment feature is an add on capable of bridging the distrust and uncertainties between customers and small businesses during COVID-19.",
     case_study_link:
       "https://docs.google.com/document/d/1T3FB7S9o_Apx9cO7blwByKwL-f9wgW6EZrN8euzx88Y/edit",
     team: [
